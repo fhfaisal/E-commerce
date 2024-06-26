@@ -17,10 +17,14 @@ class OnBoardingController extends GetxController {
 
   ///Update current index and jump to the next page
   void nextPage() {
-    pageController.nextPage(
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeOut,
-    );
+    if(currentPage.value==3){
+      navigateToLogin();
+    }else{
+      pageController.nextPage(
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+      );
+    }
   }
   ///Update current index and jump to the last page
   void skipPage() {
@@ -29,7 +33,7 @@ class OnBoardingController extends GetxController {
   }
 
   navigateToLogin() {
-    // Get.offAllNamed(Routes.LOGIN);
+    Get.offAllNamed(Routes.LOGIN);
   }
 
   onBoardingDone() {

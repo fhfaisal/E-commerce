@@ -11,13 +11,13 @@ class AppOutlinedButtonTheme {
     style: OutlinedButton.styleFrom(
       elevation: 1,
       fixedSize: const Size.fromHeight(AppSizes.buttonHeight),
-      foregroundColor:AppColors.primary,
+      foregroundColor: AppColors.primary,
       backgroundColor: Colors.transparent,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.transparent,
       side: const BorderSide(color: AppColors.primary),
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      textStyle: const TextStyle(fontSize: 16, color: AppColors.primary, fontWeight: FontWeight.w600),
+      textStyle: const TextStyle(fontSize: 16, color: AppColors.black, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     ),
   );
@@ -26,11 +26,11 @@ class AppOutlinedButtonTheme {
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
     elevation: 0,
+    fixedSize: const Size.fromHeight(AppSizes.buttonHeight),
     foregroundColor: Colors.white,
-    backgroundColor: AppColors.primary,
     disabledForegroundColor: Colors.grey,
     disabledBackgroundColor: Colors.transparent,
-    //side: const BorderSide(color: AppColors.primary),
+    side: const BorderSide(color: AppColors.grey),
     padding: const EdgeInsets.symmetric(horizontal: 20),
     textStyle: const TextStyle(fontSize: 16, color: AppColors.white, fontWeight: FontWeight.w600),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

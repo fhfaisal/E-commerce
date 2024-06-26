@@ -25,6 +25,7 @@ class OnBoardingNextButton extends GetView<OnBoardingController> {
             backgroundColor: dark ? AppColors.primary : AppColors.black,
           ),
           onPressed: () => controller.nextPage(),
+          onLongPress: () => controller.navigateToLogin(),
           child: const Icon(Iconsax.arrow_right_3)),
     );
   }

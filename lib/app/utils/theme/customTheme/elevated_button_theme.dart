@@ -17,7 +17,7 @@ class AppElevatedButtonTheme {
       //side: const BorderSide(color: AppColors.primary),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       textStyle: const TextStyle(fontSize: 16, color: AppColors.white, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     ),
   );
 
@@ -25,6 +25,7 @@ class AppElevatedButtonTheme {
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
     elevation: 0,
+    fixedSize: const Size.fromHeight(AppSizes.buttonHeight),
     foregroundColor: Colors.white,
     backgroundColor: AppColors.primary,
     disabledForegroundColor: Colors.grey,
@@ -32,6 +33,6 @@ class AppElevatedButtonTheme {
     //side: const BorderSide(color: AppColors.primary),
     padding: const EdgeInsets.symmetric(horizontal: 20),
     textStyle: const TextStyle(fontSize: 16, color: AppColors.white, fontWeight: FontWeight.w600),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
   ));
 }

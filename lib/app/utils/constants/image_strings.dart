@@ -5,13 +5,10 @@ class AppImageStrings{
   static const onBoarding3="assets/images/onBoarding1.png";
   static const onBoarding4="assets/images/onBoarding4.png";
   ///Login
-  static const backgroundLogo="assets/logos/icon.png";
-  static const fullLogo="assets/logos/logo-large.png";
+  static const logo="assets/logos/icon.png";
+  static const logoDark="assets/logos/icon_dark.png";
+  static const google="assets/logos/google_logo.png";
+  static const facebook="assets/logos/facebook_logo.png";
   ///Home
   static const banner="assets/images/home/banner.jpg";
-  static const refer="assets/images/home/refer.jpg";
-  static const aci="assets/images/home/aci.png";
-  static const beximco="assets/images/home/beximco.png";
-  static const gsk="assets/images/home/gsk.png";
-  static const product1="assets/images/home/product1.png";
 }
