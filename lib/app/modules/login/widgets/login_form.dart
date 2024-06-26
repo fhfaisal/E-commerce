@@ -1,10 +1,12 @@
+import 'package:ecommerce/app/modules/login/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/app_strings.dart';
 import '../../../utils/constants/sizes.dart';
 
-class AppLoginForm extends StatelessWidget {
+class AppLoginForm extends GetView<LoginController> {
   const AppLoginForm({
     super.key,
   });
@@ -58,7 +60,7 @@ class AppLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () =>controller.navigateToHomePage(),
                 child: const Text(AppText.signIn),
               ),
             ),
@@ -68,7 +70,7 @@ class AppLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => controller.navigateToSignInPage(),
                 child: const Text(AppText.createAccount),
               ),
             ),

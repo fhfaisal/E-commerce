@@ -11,7 +11,7 @@ class AppElevatedButtonTheme {
       elevation: 0,
       fixedSize: const Size.fromHeight(AppSizes.buttonHeight),
       foregroundColor: Colors.white,
-      backgroundColor: AppColors.primary,
+      backgroundColor: AppColors.dark,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.transparent,
       //side: const BorderSide(color: AppColors.primary),

@@ -1,7 +1,8 @@
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+  static LoginController get instance=> Get.find();
 
   final count = 0.obs;
   @override
@@ -19,5 +20,6 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void navigateToSignInPage() => Get.toNamed(Routes.SIGN_IN);
+  void navigateToHomePage() => Get.toNamed(Routes.HOME);
 }
