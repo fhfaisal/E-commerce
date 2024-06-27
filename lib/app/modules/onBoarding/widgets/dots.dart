@@ -21,7 +21,7 @@ class OnBoardingDots extends GetView<OnBoardingController> {
         child: Center(
             child: SmoothPageIndicator(
               controller: controller.pageController,
-              count: 4,
+              count: 3,
               effect: ExpandingDotsEffect(activeDotColor: dark ? AppColors.light : AppColors.dark, dotHeight: 10),
             )));
   }

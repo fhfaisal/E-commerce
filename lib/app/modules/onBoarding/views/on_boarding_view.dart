@@ -1,3 +1,4 @@
+import 'package:ecommerce/app/utils/constants/app_text.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
@@ -21,20 +22,11 @@ class OnBoardingView extends GetView<OnBoardingController> {
         PageView(
           controller: controller.pageController,
           onPageChanged: (value) => controller.updatePageIndicator(value),
-          children: [
-            OnBoarding(image: AppImageStrings.onBoarding1, title: 'onBoarding1Title'.tr, subtitle: 'onBoarding1Subtitle'.tr),
-            OnBoarding(
-              image: AppImageStrings.onBoarding2,
-              title: 'onBoarding2Title'.tr,
-              subtitle: 'onBoarding2Subtitle'.tr,
-            ),
-            OnBoarding(
-              image: AppImageStrings.onBoarding3,
-              title: 'onBoarding3Title'.tr,
-              subtitle: 'onBoarding3Subtitle'.tr,
-            ),
-            OnBoarding(image: AppImageStrings.onBoarding4, title: 'onBoarding4Title'.tr, subtitle: 'onBoarding4Subtitle'.tr),
-          ],
+          children: const [
+            OnBoarding(image: AppImageStrings.onBoarding1, title: AppText.onBoardingTitle1, subtitle: AppText.onBoardingSubTitle1),
+            OnBoarding(image: AppImageStrings.onBoarding2, title: AppText.onBoardingTitle2, subtitle: AppText.onBoardingSubTitle2),
+            OnBoarding(image: AppImageStrings.onBoarding3, title: AppText.onBoardingTitle3, subtitle: AppText.onBoardingSubTitle3),
+            ],
         ),
         ///Skip Button
         const OnBoardingSkipButton(),

@@ -5,8 +5,7 @@ import '../../constants/colors.dart';
 class AppCheckboxTheme {
   AppCheckboxTheme._(); // To avoid creating instances
 
-  /// Customizable Light Text Theme
-
+  ///Light Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     checkColor: MaterialStateProperty.resolveWith((states) {
@@ -18,27 +17,27 @@ class AppCheckboxTheme {
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return AppColors.primary;
+        return AppColors.black;
       } else {
         return Colors.transparent;
       }
     }),
   );
 
-  /// Customizable Light Text Theme
+  ///Dark Theme
 
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.white;
+        return AppColors.white;
       } else {
-        return Colors.black;
+        return Colors.white;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.blue;
+        return AppColors.primary;
       } else {
         return Colors.transparent;
       }

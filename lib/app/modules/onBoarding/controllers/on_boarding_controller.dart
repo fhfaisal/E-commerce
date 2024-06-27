@@ -17,7 +17,7 @@ class OnBoardingController extends GetxController {
 
   ///Update current index and jump to the next page
   void nextPage() {
-    if(currentPage.value==3){
+    if(currentPage.value==2){
       navigateToLogin();
     }else{
       pageController.nextPage(
@@ -28,8 +28,8 @@ class OnBoardingController extends GetxController {
   }
   ///Update current index and jump to the last page
   void skipPage() {
-    currentPage.value = 3;
-    pageController.jumpToPage(3);
+    currentPage.value = 2;
+    pageController.jumpToPage(2);
   }
 
   navigateToLogin() {

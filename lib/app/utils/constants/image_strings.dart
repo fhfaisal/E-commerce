@@ -1,9 +1,8 @@
 class AppImageStrings{
   ///onBoarding
-  static const onBoarding1="assets/images/onBoarding3.png";
-  static const onBoarding2="assets/images/onBoarding2.png";
-  static const onBoarding3="assets/images/onBoarding1.png";
-  static const onBoarding4="assets/images/onBoarding4.png";
+  static const onBoarding1="assets/images/animations/sammy-line-sailor-on-mast-looking-through-telescope.gif";
+  static const onBoarding2="assets/images/animations/sammy-line-woman-in-shopping-cart-placing-order-on-smartphone.gif";
+  static const onBoarding3="assets/images/animations/sammy-line-delivery-with-gps-navigation.gif";
   ///Login
   static const logo="assets/logos/icon.png";
   static const logoDark="assets/logos/icon_dark.png";
@@ -11,4 +10,7 @@ class AppImageStrings{
   static const facebook="assets/logos/facebook_logo.png";
   ///Home
   static const banner="assets/images/home/banner.jpg";
+  ///Verify Email
+  static const verifyEmail="assets/images/sammy-line-email-confirm.png";
+  static const confirmedEmail="assets/images/sammy-line-man-and-woman-high-fiving-each-other.png";
 }

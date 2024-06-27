@@ -1,3 +1,4 @@
+import 'package:ecommerce/app/utils/constants/app_text.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class OnBoardingSkipButton extends GetView<OnBoardingController> {
       child: TextButton(
         onLongPress: () => controller.navigateToLogin(),
         onPressed: () => controller.skipPage(),
-        child: Text('Skip'.tr),
+        child: Text(AppText.skip),
       ),
     );
   }

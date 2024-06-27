@@ -1,5 +1,5 @@
 import 'package:ecommerce/app/common/styles/spacing_style.dart';
-import 'package:ecommerce/app/utils/constants/app_strings.dart';
+import 'package:ecommerce/app/utils/constants/app_text.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';

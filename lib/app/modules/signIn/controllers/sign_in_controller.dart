@@ -1,7 +1,9 @@
+import 'package:ecommerce/app/modules/signIn/widgets/verify_email.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SignInController extends GetxController {
-  //TODO: Implement SignInController
+  static SignInController get instance=>Get.find();
 
   final count = 0.obs;
   @override
@@ -19,5 +21,5 @@ class SignInController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void navigateToVerifyEmail() => Get.to(()=>const VerifyEmail());
 }

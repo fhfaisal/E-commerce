@@ -1,46 +1,16 @@
 import 'package:get/get.dart';
 
-class AppText extends Translations {
-  @override
-  Map<String, Map<String, String>> get keys =>
-      {
-        'en_US': {
-          ///OnBoarding Page
-          'onBoarding1Title':"Your Health, Delivered",
-          'onBoarding1Subtitle':"Get your medications delivered quickly and reliably to your doorstep.",
-          'onBoarding2Title':"Fast, Reliable Medicine Delivery",
-          'onBoarding2Subtitle':"Order meds in a few taps and receive them swiftly at home.",
-          'onBoarding3Title':"Care at Your Convenience",
-          'onBoarding3Subtitle':"Simplify your health routine with convenient prescription deliveries.",
-          'onBoarding4Title':"Welcome to Medxpress",
-          'onBoarding4Subtitle':"Do you want some help with your health to get better life?",
-          'GetStarted':"Get Started",
-          'Next':"Next",
-          'Skip':"Skip",
-          ///Login Page
-          'loginTitle':"Welcome back",
-          'loginSubtitle':"Discovered limitless choices and unmatched convenience",
-          'LoginYourAccount':"Login Your Account",
-          'Email':"Email",
-          'EnterYourEmail':"Enter your email",
-          'Password':"Password",
-          'EnterYourPassword':"Enter your password",
-          'RememberMe':"Remember me",
-          'ForgotPassword?':"Forgot Password?",
-          'Login':"Login",
-          'SignUp':"Sign Up",
-          'DontHaveAnAccount':"Don’t Have an Account?",
-        },
-        'bn_BD': {}
-      };
+class AppText{
 
   static const String submit = "Submit"; static const String appName = "T-Store"; static const String tContinue="Continue";
 // OnBoarding Texts
-  static const String onBoardingTitle="Choose your product";
+  static const String skip="Skip";
+  static const String onBoardingTitle1="Choose your product";
   static const String onBoardingTitle2 = "Select Payment Method";
   static const String onBoardingTitle3= "Deliver at your door step";
-  static const String onBoardingSubTitle="Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
-  static const String onBoardingSubTitle2= "For Seamless Transactions, Choose Your Payment Path Your Convenience, Our Priority!"; static const String onBoardingSubTitle3= "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
+  static const String onBoardingSubTitle1="Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
+  static const String onBoardingSubTitle2= "For Seamless Transactions, Choose Your Payment Path Your Convenience, Our Priority!";
+  static const String onBoardingSubTitle3= "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 // Authentication Form Text
   static const String firstName="First Name";
   static const String lastName="Last Name";

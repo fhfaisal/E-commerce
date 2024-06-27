@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../utils/constants/app_strings.dart';
+import '../../../utils/constants/app_text.dart';
 import '../../../utils/constants/sizes.dart';
 
 class AppLoginForm extends GetView<LoginController> {
@@ -43,6 +43,7 @@ class AppLoginForm extends GetView<LoginController> {
                 Row(
                   children: [
                     Checkbox(
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       value: true,
                       onChanged: (value) {},
                     ),
