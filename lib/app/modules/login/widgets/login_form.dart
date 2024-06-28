@@ -52,7 +52,7 @@ class AppLoginForm extends GetView<LoginController> {
                 ),
 
                 ///Forgot password
-                TextButton(onPressed: () {}, child: const Text(AppText.forgetPassword))
+                TextButton(onPressed: () =>controller.navigateToForgotPasswordPage() , child: const Text(AppText.forgetPassword))
               ],
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),

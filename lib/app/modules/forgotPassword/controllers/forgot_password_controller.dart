@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class SignInController extends GetxController {
-  static SignInController get instance=>Get.find();
+class ForgotPasswordController extends GetxController {
+  //TODO: Implement ForgotPasswordController
 
   final count = 0.obs;
   @override
@@ -19,5 +19,5 @@ class SignInController extends GetxController {
     super.onClose();
   }
 
-  //void navigateToVerifyEmail() => Get.to(()=>const VerifyEmail());
+  void increment() => count.value++;
 }
