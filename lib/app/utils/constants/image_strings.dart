@@ -11,7 +11,9 @@ class AppImageStrings {
   static const facebook = "assets/logos/facebook_logo.png";
 
   ///Home
-  static const banner = "assets/images/home/banner.jpg";
+  static const banner1 = "assets/images/banner/product1.png";
+  static const banner2 = "assets/images/banner/product2.png";
+  static const banner3 = "assets/images/banner/product3.png";
 
   ///Verify Email
   static const verifyEmail = "assets/images/sammy-line-email-confirm.png";
@@ -19,4 +21,16 @@ class AppImageStrings {
 
   ///Reset Password
   static const resetPassword = "assets/images/animations/marginalia-password-protection.gif";
+  ///Home-Categories
+  static const shoes = "assets/images/categories/shoes.png";
+  static const menFashion = "assets/images/categories/icons8-mens-hoodie-50.png";
+  static const womenFashion = "assets/images/categories/icons8-womens-blouse-50.png";
+  static const backpack = "assets/images/categories/icons8-backpack-50.png";
+  static const electronics = "assets/images/categories/icons8-electronics-50.png";
+  static const sports = "assets/images/categories/icons8-jersey-50.png";
+  static const homeAppliances = "assets/images/categories/icons8-home-appliances-58.png";
+  static const jewellery = "assets/images/categories/icons8-jewellery-66.png";
+  static const beauty = "assets/images/categories/icons8-makeup-48.png";
+  static const motherAndBaby = "assets/images/categories/icons8-mother-50.png";
+  static const watches = "assets/images/categories/icons8-watches-64.png";
 }

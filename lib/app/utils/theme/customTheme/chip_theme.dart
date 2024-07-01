@@ -8,7 +8,7 @@ class AppChipTheme {
 
   static ChipThemeData lightChipTheme = ChipThemeData(
     shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppSizes.borderRadiusMd),
+        borderRadius: BorderRadius.circular(AppSizes.borderRadius8),
         side: const BorderSide(color: Colors.transparent)),
     backgroundColor: AppColors.primary5,
     disabledColor: AppColors.disableText,

@@ -49,11 +49,11 @@ class AppSizes {
   static const double spaceBtwSections = 32.0;
 
   // Border radius
-  static const double borderRadiusSm = 4 ;
-  static const double borderRadiusMd = 8 ;
-  static const double borderRadiusLg = 12 ;
-  static const double borderRadiusXL = 16 ;
-  static const double borderRadiusXXL = 20 ;
+  static const double borderRadius4 = 4 ;
+  static const double borderRadius8 = 8 ;
+  static const double borderRadius12 = 12 ;
+  static const double borderRadius16 = 16 ;
+  static const double borderRadius20 = 20 ;
 
 // Divider height
   static const double dividerHeight = 1 ;
