@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
+  ///Carousal Index Handler
+  RxInt carousalCurrentIndex=0.obs;
+  updateCarousalCurrentIndex(index){
+    carousalCurrentIndex.value=index;
+  }
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +20,4 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

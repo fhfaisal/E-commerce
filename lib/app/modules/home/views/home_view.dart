@@ -1,5 +1,7 @@
 import 'dart:ffi';
 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/app/common/widgets/containers/circular_container.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -17,6 +19,7 @@ import '../../../common/widgets/verticalImageText/vertical_image_text.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/categories.dart';
 import '../widgets/home_appbar.dart';
+import '../widgets/promotional_slider.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -55,12 +58,14 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
+
             ///Slider -Banner
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
-              child: AppRoundedImage(
-                imageUrl: AppImageStrings.banner1,
-              ),
+            PromotionalSlider(
+              banners: [
+                AppImageStrings.banner1,
+                AppImageStrings.banner2,
+                AppImageStrings.banner3,
+              ],
             )
           ],
         ),

@@ -5,8 +5,9 @@ class AppCircularContainer extends StatelessWidget {
     this.width,
     this.borderRadius,
     this.padding,
+    this.margin,
     this.color, this.child});
-  final double? height, width, borderRadius,padding;
+  final double? height, width, borderRadius,padding,margin;
   final Color? color;
   final Widget? child;
 
@@ -16,6 +17,7 @@ class AppCircularContainer extends StatelessWidget {
       height: height??400,
       width: width??400,
       padding: EdgeInsets.all(padding??0),
+      margin: EdgeInsets.all(margin??0),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(borderRadius??400), color: color),
       child: child,
     );
