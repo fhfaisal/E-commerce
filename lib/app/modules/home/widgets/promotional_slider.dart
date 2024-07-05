@@ -41,7 +41,7 @@ class PromotionalSlider extends StatelessWidget {
               children: [
                 for (int i = 0; i < banners.length; i++)
                   AppCircularContainer(
-                    margin: AppSizes.spaceBtwItems4,
+                    marginAll: AppSizes.spaceBtwItems4,
                     width: 20,
                     height: 5,
                     color: controller.carousalCurrentIndex.value == i ? AppColors.primary : AppColors.grey,

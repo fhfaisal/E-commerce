@@ -21,6 +21,7 @@ class AppImageStrings {
 
   ///Reset Password
   static const resetPassword = "assets/images/animations/marginalia-password-protection.gif";
+
   ///Home-Categories
   static const shoes = "assets/images/categories/shoes.png";
   static const menFashion = "assets/images/categories/icons8-mens-hoodie-50.png";
@@ -33,4 +34,14 @@ class AppImageStrings {
   static const beauty = "assets/images/categories/icons8-makeup-48.png";
   static const motherAndBaby = "assets/images/categories/icons8-mother-50.png";
   static const watches = "assets/images/categories/icons8-watches-64.png";
+
+  ///Home-Products
+  static const product1 = "assets/images/products/charlesdeluvio-1-nx1QR5dTE-unsplash.jpg";
+  static const product2 = "assets/images/products/daniel-korpai-hbTKIbuMmBI-unsplash.jpg";
+  static const product3 = "assets/images/products/david-svihovec-LEtrhrME07g-unsplash.jpg";
+  static const product4 = "assets/images/products/domino-studio-164_6wVEHfI-unsplash.jpg";
+  static const product5 = "assets/images/products/kiran-ck-LSNJ-pltdu8-unsplash.jpg";
+  static const product6 = "assets/images/products/mohammad-metri-E-0ON3VGrBc-unsplash.jpg";
+  static const product7 = "assets/images/products/sun-lingyan-_H0fjILH5Vw-unsplash.jpg";
+  static const product8 = "";
 }

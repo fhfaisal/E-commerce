@@ -8,7 +8,7 @@ class AppColors {
   static Color primary50 = const Color(0xFF0C7B93).withOpacity(0.50);
   static Color primary10 = const Color(0xFF0C7B93).withOpacity(0.10);
   static Color primary5 = const Color(0xFF0C7B93).withOpacity(0.05);
-  static const Color secondary = Color(0xFF142850);
+  static const Color secondary = Color(0xFFF3EC63);
   static const Color accent = Color(0xFFb0c7ff);
 
   /// Text Colors
