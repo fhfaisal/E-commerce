@@ -23,7 +23,7 @@ class AppSectionHeading extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title,style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor??AppColors.light),),
+        Text(title,style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor??(dark?AppColors.light:AppColors.dark)),),
         if(action)TextButton(onPressed: onPressed, child: Text(buttonText))
       ],
     );

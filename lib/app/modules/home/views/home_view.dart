@@ -52,7 +52,7 @@ class HomeView extends GetView<HomeController> {
                       children: [
 
                         ///Heading
-                        AppSectionHeading(title: 'Popular Categories', action: false),
+                        AppSectionHeading(title: 'Popular Categories', action: false,textColor: AppColors.white),
                         SizedBox(height: AppSizes.spaceBtwItems),
 
                         ///Categories
@@ -65,8 +65,12 @@ class HomeView extends GetView<HomeController> {
             ),
 
             ///Slider -Banner
-            PromotionalSlider(banners: [AppImageStrings.banner1, AppImageStrings.banner2, AppImageStrings.banner3]),
-            SizedBox(height: AppSizes.spaceBtwItems),
+            const PromotionalSlider(banners: [AppImageStrings.banner1, AppImageStrings.banner2, AppImageStrings.banner3]),
+            //SizedBox(height: AppSizes.spaceBtwItems),
+            const Padding(
+              padding: EdgeInsets.only(left: AppSizes.paddingMd),
+              child: AppSectionHeading(title: 'Popular Products',action: true),
+            ),
 
             ///Popular products
             AppGridViewLayout(

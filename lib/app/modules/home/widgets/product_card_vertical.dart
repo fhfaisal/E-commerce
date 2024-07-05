@@ -22,7 +22,6 @@ class ProductCardVertical extends StatelessWidget {
     /// Container with side paddings, color, edges, radius and shadow.
     return Container(
       width: 180,
-      padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
         boxShadow: [AppShadowStyle.verticalProductShadow],
         borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
@@ -33,13 +32,18 @@ class ProductCardVertical extends StatelessWidget {
           ///Thumbnail,wishlist button discount tag
           AppCircularContainer(
             height: 180,
-            paddingAll: AppSizes.sm,
             borderRadius: AppSizes.borderRadius8,
             color: dark ? AppColors.darkerGrey : AppColors.white,
             child: Stack(
               children: [
                 ///Image
-                const AppRoundedImage(imageUrl: AppImageStrings.product1),
+                const AppRoundedImage(
+                  fit: BoxFit.cover,
+                  width: double.maxFinite,
+                  applyImageRadius: true,
+                  borderRadius: AppSizes.borderRadius8,
+                  imageUrl: AppImageStrings.product3,
+                ),
 
                 ///Sale tag
                 Positioned(
@@ -59,7 +63,7 @@ class ProductCardVertical extends StatelessWidget {
                 ),
 
                 ///Wish-button
-                const Positioned(top: 0, right: 0, child: AppCircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+                const Positioned(top: 0, right: 0, child: AppCircularIcon(icon: Icon(Iconsax.heart5,color: Colors.red,),),),
               ],
             ),
           ),
@@ -87,32 +91,36 @@ class ProductCardVertical extends StatelessWidget {
                     )
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const AppProductPriceText(
-                      price: '15',
-                      isLarge: true,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: dark ? AppColors.primary : AppColors.dark,
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(AppSizes.productImageRadius),
-                          )),
-                      child: const SizedBox(
-                          height: AppSizes.iconLg * 1.2,
-                          width: AppSizes.iconLg * 1.2,
-                          child: Icon(
-                            Iconsax.add,
-                            color: AppColors.white,
-                          )),
-                    )
-                  ],
-                )
               ],
             ),
+          ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: AppSizes.sm),
+                child: AppProductPriceText(
+                  price: '15',
+                  isLarge: true,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: dark ? AppColors.primary : AppColors.dark,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(AppSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(AppSizes.productImageRadius),
+                    )),
+                child: const SizedBox(
+                    height: AppSizes.iconLg * 1.2,
+                    width: AppSizes.iconLg * 1.2,
+                    child: Icon(
+                      Iconsax.add,
+                      color: AppColors.white,
+                    )),
+              )
+            ],
           )
         ],
       ),

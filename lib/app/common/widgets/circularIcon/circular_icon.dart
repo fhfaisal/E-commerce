@@ -10,7 +10,7 @@ class AppCircularIcon extends StatelessWidget {
   });
   final VoidCallback? onPressed;
   final Color? backgroundColor,color;
-  final IconData icon;
+  final Icon icon;
   final double? size,height,width;
   @override
   Widget build(BuildContext context) {
@@ -19,10 +19,10 @@ class AppCircularIcon extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: backgroundColor ?? (dark?AppColors.dark.withOpacity(0.9):AppColors.light.withOpacity(0.9)),
+          color: backgroundColor ?? (dark?AppColors.light.withOpacity(0.9):AppColors.light.withOpacity(0.9)),
           borderRadius: BorderRadius.circular(100)
       ),
-      child: Center(child: IconButton(onPressed: onPressed,icon: Icon(icon,color: color,size: size,),)),
+      child: Center(child: IconButton(onPressed: onPressed,icon: icon,)),
     );
   }
 }
