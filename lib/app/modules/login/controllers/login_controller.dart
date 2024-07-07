@@ -21,6 +21,6 @@ class LoginController extends GetxController {
   }
 
   void navigateToSignInPage() => Get.toNamed(Routes.SIGN_IN);
-  void navigateToHomePage() => Get.toNamed(Routes.HOME);
+  void navigateToHomePage() => Get.toNamed(Routes.NAVIGATION_BAR);
   void navigateToForgotPasswordPage() => Get.toNamed(Routes.FORGOT_PASSWORD);
 }
