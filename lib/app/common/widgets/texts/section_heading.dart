@@ -6,7 +6,7 @@ class AppSectionHeading extends StatelessWidget {
   const AppSectionHeading({
     super.key, this.buttonText='View all',
     required this.title,
-    this.action=false,
+    this.action=true,
     this.textColor,
     this.onPressed,
   });

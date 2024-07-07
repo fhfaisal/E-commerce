@@ -19,7 +19,7 @@ class AppGridViewLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: 6,
+      itemCount: itemCount,
       shrinkWrap: true,
       padding:padding?? EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),

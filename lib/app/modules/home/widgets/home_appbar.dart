@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget {
         ],
       ),
       actions: [
-        AppShoppingCountingCard(onPressed: (){},),
+        AppShoppingCountingCard(onPressed: (){},color: AppColors.white,),
       ],
     );
   }

@@ -12,6 +12,8 @@ import '../modules/onBoarding/bindings/on_boarding_binding.dart';
 import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/signIn/bindings/sign_in_binding.dart';
 import '../modules/signIn/views/sign_in_view.dart';
+import '../modules/store/bindings/store_binding.dart';
+import '../modules/store/views/store_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.NAVIGATION_BAR,
       page: () => const NavigationBarView(),
       binding: NavigationBarBinding(),
+    ),
+    GetPage(
+      name: _Paths.STORE,
+      page: () => const StoreView(),
+      binding: StoreBinding(),
     ),
   ];
 }

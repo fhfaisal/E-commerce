@@ -1,6 +1,9 @@
 import 'package:ecommerce/app/common/widgets/containers/circular_container.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
+import 'package:ecommerce/app/common/widgets/texts/brand_text_title.dart';
+import 'package:ecommerce/app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -9,6 +12,7 @@ import '../../../common/widgets/circularIcon/circular_icon.dart';
 import '../../../common/widgets/texts/product_price.dart';
 import '../../../common/widgets/texts/product_title.dart';
 import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/enams.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_function.dart';
 
@@ -63,34 +67,31 @@ class ProductCardVertical extends StatelessWidget {
                 ),
 
                 ///Wish-button
-                const Positioned(top: 0, right: 0, child: AppCircularIcon(icon: Icon(Iconsax.heart5,color: Colors.red,),),),
+                const Positioned(
+                  top: 0,
+                  right: 0,
+                  child: AppCircularIcon(
+                    icon: Icon(
+                      Iconsax.heart5,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
 
           ///Product Details
-          Padding(
-            padding: const EdgeInsets.only(left: AppSizes.sm),
+          const Padding(
+            padding: EdgeInsets.only(left: AppSizes.sm),
             child: Column(
               children: [
                 ///Title
-                const AppProductTitleText(title: 'watch uashgfuigasiufgsgafgahgzvgsdgfwi', maxLine: 2),
-                const SizedBox(height: AppSizes.spaceBtwItems / 2),
-                Row(
-                  children: [
-                    Flexible(
-                        child: Text('Brand',
-                            style: Theme.of(context).textTheme.labelMedium!.apply(color: AppColors.tertiaryText),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1)),
-                    const SizedBox(width: AppSizes.spaceBtwItems / 2),
-                    const Icon(
-                      Iconsax.verify5,
-                      color: AppColors.primary,
-                      size: AppSizes.iconSm,
-                    )
-                  ],
-                ),
+                AppProductTitleText(title: 'watch uashgfuigasiufgsgafgahgzvgsdgfwi', maxLine: 2),
+                SizedBox(height: AppSizes.spaceBtwItems / 2),
+                Align(
+                  alignment: Alignment.centerLeft,
+                    child: AppBrandTitleTextWithVerifyIcon(title: 'Brand',)),
               ],
             ),
           ),
@@ -127,3 +128,5 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+

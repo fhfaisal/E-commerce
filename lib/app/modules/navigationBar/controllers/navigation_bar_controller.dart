@@ -1,4 +1,5 @@
 import 'package:ecommerce/app/modules/home/views/home_view.dart';
+import 'package:ecommerce/app/modules/store/views/store_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,7 @@ class NavigationBarController extends GetxController {
   final Rx<int> selectedIndex=0.obs;
   final RxList screen =[
     const HomeView(),
-    const Center(child: Text('Store')),
+    const StoreView(),
     const Center(child: Text('Wishlist')),
     const Center(child: Text('Profile')),
   ].obs;
