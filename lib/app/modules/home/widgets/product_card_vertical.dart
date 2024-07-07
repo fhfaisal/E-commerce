@@ -1,9 +1,7 @@
 import 'package:ecommerce/app/common/widgets/containers/circular_container.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
-import 'package:ecommerce/app/common/widgets/texts/brand_text_title.dart';
 import 'package:ecommerce/app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -12,7 +10,6 @@ import '../../../common/widgets/circularIcon/circular_icon.dart';
 import '../../../common/widgets/texts/product_price.dart';
 import '../../../common/widgets/texts/product_title.dart';
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/enams.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_function.dart';
 

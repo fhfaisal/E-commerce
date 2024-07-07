@@ -17,7 +17,7 @@ class AppSearchBarTheme {
     backgroundColor: MaterialStateProperty.all(AppColors.searchBg),
     textStyle: MaterialStateProperty.all(const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w500, color: AppColors.secondary)),
     hintStyle: MaterialStateProperty.all(const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w400, color: AppColors.tertiaryText)),
-    side: MaterialStateProperty.all(BorderSide(color: AppColors.primary,))
+    side: MaterialStateProperty.all(const BorderSide(color: AppColors.primary,))
   );
 
 // AppBar Theme

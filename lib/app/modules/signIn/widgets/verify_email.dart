@@ -68,7 +68,7 @@ class VerifyEmail extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () => null,
+                    onPressed: () {},
                     child: const Text(AppText.resendEmail),
                   ),
                 ),

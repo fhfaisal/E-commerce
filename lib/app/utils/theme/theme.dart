@@ -11,7 +11,6 @@ import 'customTheme/checkbox_theme.dart';
 import 'customTheme/chip_theme.dart';
 import 'customTheme/elevated_button_theme.dart';
 import 'customTheme/input_decoration_theme.dart';
-import 'customTheme/material_button_theme.dart';
 import 'customTheme/search_bar_theme.dart';
 import 'customTheme/text_theme.dart';
 
@@ -45,6 +44,10 @@ class AppTheme {
       //iconTheme: const IconThemeData(color: AppColors.dark),
       bottomNavigationBarTheme: AppBottomNavigationTheme.lightBottomNavigationTheme,
       cardTheme: AppCardTheme.lightCardTheme,
+      switchTheme: SwitchThemeData(
+          trackColor: MaterialStateProperty.all(AppColors.primary.withAlpha(50)),
+          trackOutlineColor: MaterialStateProperty.all(AppColors.primary),
+          thumbColor: MaterialStateProperty.all(AppColors.primary)),
       dividerTheme: DividerThemeData(color: AppColors.secondary.withOpacity(0.1)));
 
   ///Dark Theme
@@ -73,6 +76,10 @@ class AppTheme {
       //iconTheme: const IconThemeData(color: AppColors.white),
       bottomNavigationBarTheme: AppBottomNavigationTheme.darkElevatedButtonTheme,
       cardTheme: AppCardTheme.darkCardTheme,
+      switchTheme: SwitchThemeData(
+          trackColor: MaterialStateProperty.all(AppColors.dark),
+          trackOutlineColor: MaterialStateProperty.all(AppColors.primary),
+          thumbColor: MaterialStateProperty.all(AppColors.primary)),
       dividerTheme: DividerThemeData(color: AppColors.secondary.withOpacity(0.1)));
 // ThemeData
 }

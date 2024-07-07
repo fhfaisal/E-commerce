@@ -25,7 +25,7 @@ class AppCircularImage extends StatelessWidget {
   final BoxBorder? border;
   final Color? backgroundColor,overlayColor;
   final BoxFit? fit;
-  final EdgeInsetsGeometry? padding;
+  final double? padding;
   final bool isNetworkImage;
   final VoidCallback? onPressed;
   final double? borderRadius;
@@ -37,12 +37,13 @@ class AppCircularImage extends StatelessWidget {
         child: Container(
             width: width,
             height: height,
-            padding: padding,
+            padding: EdgeInsets.all(padding??0),
             decoration: BoxDecoration(
                 border: border,
                 borderRadius: BorderRadius.circular(borderRadius??100),
                 color: backgroundColor??(AppHelperFunction.isDarkMode(context)?AppColors.black:AppColors.white) ),
-            child: Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(borderRadius??100),
               child: Image(
                 color: overlayColor,
                   fit: fit,

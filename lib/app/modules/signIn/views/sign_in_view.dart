@@ -1,11 +1,9 @@
 import 'package:ecommerce/app/utils/constants/app_text.dart';
-import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../common/divider.dart';
 import '../../../common/widgets/social_buttons.dart';

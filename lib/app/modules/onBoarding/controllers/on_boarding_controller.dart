@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
-import '../../../utils/constants/image_strings.dart';
-import '../model/on_boarding.dart';
 
 class OnBoardingController extends GetxController {
   ///Variables

@@ -1,7 +1,6 @@
 import 'package:ecommerce/app/modules/signIn/widgets/verify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/app_text.dart';

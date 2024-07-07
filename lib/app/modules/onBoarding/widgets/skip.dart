@@ -19,7 +19,7 @@ class OnBoardingSkipButton extends GetView<OnBoardingController> {
       child: TextButton(
         onLongPress: () => controller.navigateToLogin(),
         onPressed: () => controller.skipPage(),
-        child: Text(AppText.skip),
+        child: const Text(AppText.skip),
       ),
     );
   }

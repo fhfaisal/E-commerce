@@ -15,7 +15,7 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
     return AppCurvedEdgeWidget(
       child: Container(
           color: AppColors.primary,
-          height: height??400,
+          height: height,
           padding: const EdgeInsets.all(0),
           ///Make sure give a size
           child: Stack(

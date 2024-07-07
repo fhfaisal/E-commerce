@@ -22,13 +22,13 @@ class HomeCategories extends StatelessWidget {
   }
 }
  List<AppVerticalImageText> categories = [
-  AppVerticalImageText(text: "Men's Fashion", image: AppImageStrings.menFashion),
-  AppVerticalImageText(text: "Women's Fashion", image: AppImageStrings.womenFashion),
-  AppVerticalImageText(text: "Watches", image: AppImageStrings.watches),
-  AppVerticalImageText(text: "Health & Beauty", image: AppImageStrings.beauty),
-  AppVerticalImageText(text: "Bags", image: AppImageStrings.backpack),
-  AppVerticalImageText(text: "Mother & Baby", image: AppImageStrings.motherAndBaby),
-  AppVerticalImageText(text: "Sports", image: AppImageStrings.sports),
-  AppVerticalImageText(text: "Home Appliances", image: AppImageStrings.homeAppliances),
-  AppVerticalImageText(text: "Electronics Device", image: AppImageStrings.electronics),
+  const AppVerticalImageText(text: "Men's Fashion", image: AppImageStrings.menFashion),
+  const AppVerticalImageText(text: "Women's Fashion", image: AppImageStrings.womenFashion),
+  const AppVerticalImageText(text: "Watches", image: AppImageStrings.watches),
+  const AppVerticalImageText(text: "Health & Beauty", image: AppImageStrings.beauty),
+  const AppVerticalImageText(text: "Bags", image: AppImageStrings.backpack),
+  const AppVerticalImageText(text: "Mother & Baby", image: AppImageStrings.motherAndBaby),
+  const AppVerticalImageText(text: "Sports", image: AppImageStrings.sports),
+  const AppVerticalImageText(text: "Home Appliances", image: AppImageStrings.homeAppliances),
+  const AppVerticalImageText(text: "Electronics Device", image: AppImageStrings.electronics),
 ];

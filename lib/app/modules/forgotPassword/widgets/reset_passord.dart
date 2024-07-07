@@ -44,7 +44,7 @@ class ResetPassword extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () =>null,
+                    onPressed: () {},
                     child: const Text(AppText.done),
                   ),
                 ),
@@ -52,7 +52,7 @@ class ResetPassword extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () =>null,
+                    onPressed: () {},
                     child: const Text(AppText.resendEmail),
                   ),
                 ),

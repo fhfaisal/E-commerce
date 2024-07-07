@@ -3,7 +3,6 @@ import 'package:ecommerce/app/common/widgets/circularIcon/circular_icon.dart';
 import 'package:ecommerce/app/common/widgets/layouts/gridview_layout.dart';
 import 'package:ecommerce/app/modules/home/widgets/product_card_vertical.dart';
 import 'package:ecommerce/app/modules/navigationBar/controllers/navigation_bar_controller.dart';
-import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';

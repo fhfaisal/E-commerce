@@ -6,18 +6,6 @@ class HomeController extends GetxController {
   updateCarousalCurrentIndex(index){
     carousalCurrentIndex.value=index;
   }
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

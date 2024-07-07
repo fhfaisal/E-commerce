@@ -1,28 +1,16 @@
 import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce/app/common/widgets/appbar/custom_tabbar.dart';
-import 'package:ecommerce/app/common/widgets/containers/circular_container.dart';
 import 'package:ecommerce/app/common/widgets/containers/search_container.dart';
 import 'package:ecommerce/app/common/widgets/layouts/gridview_layout.dart';
-import 'package:ecommerce/app/common/widgets/roundedImage/circular_image.dart';
-import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
 import 'package:ecommerce/app/common/widgets/shoppingCard/counting_card.dart';
-import 'package:ecommerce/app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce/app/modules/home/widgets/product_card_vertical.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
-import 'package:ecommerce/app/utils/constants/enams.dart';
-import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../../../common/widgets/brand/brand_showcase.dart';
-import '../../../common/widgets/texts/brand_text_title.dart';
 import '../../../common/widgets/brand/brands_card.dart';
 import '../controllers/store_controller.dart';
 import '../widgets/categories.dart';
