@@ -43,5 +43,9 @@ class AppImageStrings {
   static const product5 = "assets/images/products/kiran-ck-LSNJ-pltdu8-unsplash.jpg";
   static const product6 = "assets/images/products/mohammad-metri-E-0ON3VGrBc-unsplash.jpg";
   static const product7 = "assets/images/products/sun-lingyan-_H0fjILH5Vw-unsplash.jpg";
-  static const product8 = "";
+  static const product8 = "assets/images/products/shoes1.png";
+  static const product9 = "assets/images/products/shoes2.png";
+  static const product10 = "assets/images/products/watch1.png";
+  static const product11 = "assets/images/products/watch2.png";
+  static const product = "";
 }

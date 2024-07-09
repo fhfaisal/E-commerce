@@ -1,5 +1,6 @@
 
 import 'package:ecommerce/app/modules/home/widgets/product_card_vertical.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -69,7 +70,9 @@ class HomeView extends GetView<HomeController> {
             AppGridViewLayout(
               itemCount: 4,
               padding: const EdgeInsets.symmetric(horizontal: AppSizes.paddingMd),
-              itemBuilder: (_, index) => const ProductCardVertical(),),
+              itemBuilder: (_, index) => ProductCardVertical(
+                onTap: () => Get.toNamed(Routes.PRODUCT_DETAILS),
+              ),),
             const SizedBox(height: AppSizes.spaceBtwItems),
           ],
         ),
