@@ -10,7 +10,7 @@ class AppProductTitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(title,
-      style: textSmall? Theme.of(context).textTheme.labelLarge:Theme.of(context).textTheme.titleSmall,
+      style: textSmall? Theme.of(context).textTheme.labelLarge:Theme.of(context).textTheme.titleLarge,
       maxLines: maxLine??2,
       overflow: TextOverflow.ellipsis,
     );
