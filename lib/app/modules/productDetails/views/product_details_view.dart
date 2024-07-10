@@ -2,6 +2,8 @@ import 'package:ecommerce/app/common/widgets/circularIcon/circular_icon.dart';
 import 'package:ecommerce/app/common/widgets/customShape/curvedEdges/curved_edge_widget.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/circular_image.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
+import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce/app/modules/productDetails/widgets/product_attributes.dart';
 import 'package:ecommerce/app/modules/productDetails/widgets/product_meta_data.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
@@ -25,23 +27,37 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunction.isDarkMode(context);
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             ///Product Image Slider
-            ProductDetailsImage(),
+            const ProductDetailsImage(),
 
             Padding(
-              padding: EdgeInsets.fromLTRB(AppSizes.defaultSpace, 0, AppSizes.defaultSpace, AppSizes.defaultSpace),
+              padding: const EdgeInsets.fromLTRB(AppSizes.defaultSpace, 0, AppSizes.defaultSpace, AppSizes.defaultSpace),
               child: Column(
                 children: [
-
                   ///Rating and share button
-                  ProductRatingAndShare(),
+                  const ProductRatingAndShare(),
+
                   ///Product Title Stock & Brand
-                  ProductMetaData()
+                  const ProductMetaData(),
+                  const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
+
+                  ///Product Attribute
+                  const ProductAttributes(),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+
+                  ///Checkout
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(onPressed: () {}, child: const Text('Checkout')),
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+                  ///Description
+                  const AppSectionHeading(title: 'Description',action: false,),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
                 ],
               ),
             )
@@ -51,7 +67,3 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
     );
   }
 }
-
-
-
-
