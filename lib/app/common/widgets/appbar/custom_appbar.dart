@@ -23,6 +23,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: AppBar(
           automaticallyImplyLeading: false,
           title: title,
+          titleTextStyle: Theme.of(context).textTheme.titleLarge,
           actions: actions,
           leading: showBackArrow
               ? IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left,color: dark?AppColors.white:AppColors.dark,))

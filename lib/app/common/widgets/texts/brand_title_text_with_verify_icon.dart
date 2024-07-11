@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/enams.dart';
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/helpers/helper_function.dart';
 import 'brand_text_title.dart';
 
 class AppBrandTitleTextWithVerifyIcon extends StatelessWidget {
@@ -25,6 +26,7 @@ class AppBrandTitleTextWithVerifyIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark=AppHelperFunction.isDarkMode(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -33,13 +35,13 @@ class AppBrandTitleTextWithVerifyIcon extends StatelessWidget {
           title: title,
           textAlign: textAlign,
           maxLines: maxLines,
-          color: textColor??AppColors.tertiaryText,
+          color: textColor??(dark?AppColors.tertiaryText:AppColors.black),
           brandTextSize: brandTextSize,
         )),
         const SizedBox(width: AppSizes.spaceBtwItems / 2),
         Icon(
           Iconsax.verify5,
-          color: iconColor,
+          color: iconColor??(dark?AppColors.primary:AppColors.black),
           size: AppSizes.iconSm,
         )
       ],

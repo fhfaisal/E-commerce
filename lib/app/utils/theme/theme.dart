@@ -1,3 +1,4 @@
+import 'package:ecommerce/app/utils/theme/customTheme/icon_button_theme.dart';
 import 'package:ecommerce/app/utils/theme/customTheme/outlined_button_theme.dart';
 import 'package:ecommerce/app/utils/theme/customTheme/text_button_theme.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class AppTheme {
       elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
       outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
       textButtonTheme: AppTextButtonTheme.lightTextButtonTheme,
+      iconButtonTheme: AppIconButtonTheme.lightIconButtonTheme,
       appBarTheme: AppAppBarTheme.lightAppBar,
       bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
       checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
@@ -61,6 +63,7 @@ class AppTheme {
       elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
       outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
       textButtonTheme: AppTextButtonTheme.darkTextButtonTheme,
+      iconButtonTheme: AppIconButtonTheme.darkIconButtonTheme,
       appBarTheme: AppAppBarTheme.darkAppBarTheme,
       bottomSheetTheme: AppBottomSheetTheme.darkBottomSheetTheme,
       checkboxTheme: AppCheckboxTheme.darkCheckboxTheme,

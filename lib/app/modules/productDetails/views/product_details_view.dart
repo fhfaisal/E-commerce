@@ -2,9 +2,11 @@ import 'package:ecommerce/app/common/widgets/circularIcon/circular_icon.dart';
 import 'package:ecommerce/app/common/widgets/customShape/curvedEdges/curved_edge_widget.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/circular_image.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
+import 'package:ecommerce/app/common/widgets/texts/read_more_text.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce/app/modules/productDetails/widgets/product_attributes.dart';
 import 'package:ecommerce/app/modules/productDetails/widgets/product_meta_data.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -65,15 +67,9 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                     action: false,
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
-                   ReadMoreText(
-                    'This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.',
-                    trimCollapsedText: 'Show More >',
-                    moreStyle: Theme.of(context).textTheme.bodyLarge,
-                    lessStyle: Theme.of(context).textTheme.bodyLarge,
-                    trimExpandedText: '< Show Less',
-                    trimLines: 2,
-                    trimMode: TrimMode.Line,
-                  ),
+                   const AppReadMoreText(
+                     text: 'This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.',
+                   ),
 
                   ///Review
                   const Divider(),
@@ -82,7 +78,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const AppSectionHeading(title: 'Reviews(159)',action: false),
-                      IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_forward_ios))
+                      IconButton(onPressed: ()=>Get.toNamed(Routes.REVIEWS_AND_RATING), icon: const Icon(Icons.arrow_forward_ios))
                       
                     ],
                   ),
@@ -96,4 +92,6 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
     );
   }
 }
+
+
 

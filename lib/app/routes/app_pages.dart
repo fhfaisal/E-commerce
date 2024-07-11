@@ -12,6 +12,8 @@ import '../modules/onBoarding/bindings/on_boarding_binding.dart';
 import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/productDetails/bindings/product_details_binding.dart';
 import '../modules/productDetails/views/product_details_view.dart';
+import '../modules/reviewsAndRating/bindings/reviews_and_rating_binding.dart';
+import '../modules/reviewsAndRating/views/reviews_and_rating_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
 import '../modules/signIn/bindings/sign_in_binding.dart';
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.PRODUCT_DETAILS,
       page: () => const ProductDetailsView(),
       binding: ProductDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.REVIEWS_AND_RATING,
+      page: () => const ReviewsAndRatingView(),
+      binding: ReviewsAndRatingBinding(),
     ),
   ];
 }

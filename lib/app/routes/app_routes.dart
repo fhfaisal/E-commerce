@@ -13,6 +13,7 @@ abstract class Routes {
   static const WISHLIST = _Paths.WISHLIST;
   static const SETTINGS = _Paths.SETTINGS;
   static const PRODUCT_DETAILS = _Paths.PRODUCT_DETAILS;
+  static const REVIEWS_AND_RATING = _Paths.REVIEWS_AND_RATING;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const WISHLIST = '/wishlist';
   static const SETTINGS = '/settings';
   static const PRODUCT_DETAILS = '/product-details';
+  static const REVIEWS_AND_RATING = '/reviews-and-rating';
 }
