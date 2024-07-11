@@ -22,24 +22,33 @@ class AppChoiceChip extends StatelessWidget {
     final isColor = AppHelperFunction.getColor(text) != null;
     final dark = AppHelperFunction.isDarkMode(context);
 
-    return ChoiceChip(
-      label: isColor ? const SizedBox() : Text(text),
-      selected: selected,
-      onSelected: onSelected,
-      labelStyle: isColor ?null: TextStyle(color: selected ? AppColors.white : AppColors.black),
-      avatar: isColor ? AppCircularContainer(shape: true, width: 50, height: 50, color: AppHelperFunction.getColor(text)!) : null,
-      labelPadding: isColor ? const EdgeInsets.all(0) : null,
-      padding: isColor ? const EdgeInsets.all(0) : null,
-      shape: isColor ? const CircleBorder() : null,
-      backgroundColor: isColor ? AppHelperFunction.getColor(text)! : null,
-      side: isColor
-          ? BorderSide(
-              color: selected
-                  ? dark
-                      ? AppColors.white
-                      : AppColors.primary
-                  : Colors.transparent)
-          : null,
-    ); //// ChoiceChip
+    return Theme(
+        data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+        child: ChoiceChip(
+            label: isColor ? const SizedBox() : Text(text),
+            selected: selected,
+            onSelected: onSelected,
+            labelStyle: isColor ? null : TextStyle(color: dark?AppColors.white:selected?AppColors.white:AppColors.black),
+            avatar: isColor
+                ? AppCircularContainer(shape: true, width: 50, height: 50, color: AppHelperFunction.getColor(text)!)
+                : null,
+            labelPadding: isColor ? const EdgeInsets.all(0) : null,
+            padding: isColor ? const EdgeInsets.all(0) : null,
+            shape: isColor ? const CircleBorder() : null,
+            selectedColor: selected ? (dark ? AppColors.primary : AppColors.black) : AppColors.white,
+            backgroundColor: isColor ? AppHelperFunction.getColor(text)! : null,
+            side: isColor
+                ? BorderSide(
+                    color: selected
+                        ? dark
+                            ? AppColors.white
+                            : AppColors.primary
+                        : Colors.transparent)
+                : BorderSide(
+                    color: selected
+                        ? dark
+                            ? AppColors.white
+                            : AppColors.primary
+                        : AppColors.tertiaryText))); //// ChoiceChip
   }
 }

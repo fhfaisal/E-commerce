@@ -48,7 +48,7 @@ class AppTheme {
           trackColor: MaterialStateProperty.all(AppColors.primary.withAlpha(50)),
           trackOutlineColor: MaterialStateProperty.all(AppColors.primary),
           thumbColor: MaterialStateProperty.all(AppColors.primary)),
-      dividerTheme: DividerThemeData(color: AppColors.secondary.withOpacity(0.1)));
+      dividerTheme: const DividerThemeData(color: AppColors.grey));
 
   ///Dark Theme
   static ThemeData darkTheme = ThemeData(
@@ -80,6 +80,6 @@ class AppTheme {
           trackColor: MaterialStateProperty.all(AppColors.dark),
           trackOutlineColor: MaterialStateProperty.all(AppColors.primary),
           thumbColor: MaterialStateProperty.all(AppColors.primary)),
-      dividerTheme: DividerThemeData(color: AppColors.secondary.withOpacity(0.1)));
+      dividerTheme: const DividerThemeData(color: AppColors.grey));
 // ThemeData
 }

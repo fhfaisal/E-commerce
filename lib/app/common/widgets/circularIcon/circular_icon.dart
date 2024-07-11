@@ -5,10 +5,10 @@ import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_function.dart';
 class AppCircularIcon extends StatelessWidget {
   const AppCircularIcon({
-    super.key, this.onPressed, this.backgroundColor, this.color, required this.icon, this.size=AppSizes.lg, this.height, this.width,
+    super.key, this.onPressed, this.backgroundColor, required this.icon, this.size=AppSizes.lg, this.height, this.width,
   });
   final VoidCallback? onPressed;
-  final Color? backgroundColor,color;
+  final Color? backgroundColor;
   final Icon icon;
   final double? size,height,width;
   @override

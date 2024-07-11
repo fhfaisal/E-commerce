@@ -15,9 +15,11 @@ import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
 
 import '../../../common/widgets/appbar/custom_appbar.dart';
 import '../controllers/product_details_controller.dart';
+import '../widgets/bottom_add_to_card.dart';
 import '../widgets/product_details_image.dart';
 import '../widgets/rating_and_share.dart';
 
@@ -28,6 +30,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
   Widget build(BuildContext context) {
     final dark = AppHelperFunction.isDarkMode(context);
     return Scaffold(
+      bottomNavigationBar: const BottomAddToCard(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,9 +58,35 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                     child: ElevatedButton(onPressed: () {}, child: const Text('Checkout')),
                   ),
                   const SizedBox(height: AppSizes.spaceBtwSections),
+
                   ///Description
-                  const AppSectionHeading(title: 'Description',action: false,),
+                  const AppSectionHeading(
+                    title: 'Description',
+                    action: false,
+                  ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
+                   ReadMoreText(
+                    'This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.This is the Description of the Product and it can go up to max 4 lines.',
+                    trimCollapsedText: 'Show More >',
+                    moreStyle: Theme.of(context).textTheme.bodyLarge,
+                    lessStyle: Theme.of(context).textTheme.bodyLarge,
+                    trimExpandedText: '< Show Less',
+                    trimLines: 2,
+                    trimMode: TrimMode.Line,
+                  ),
+
+                  ///Review
+                  const Divider(),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const AppSectionHeading(title: 'Reviews(159)',action: false),
+                      IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_forward_ios))
+                      
+                    ],
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwSections)
                 ],
               ),
             )
@@ -67,3 +96,4 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
     );
   }
 }
+
