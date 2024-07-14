@@ -21,7 +21,9 @@ class AppCircularIcon extends StatelessWidget {
           color: backgroundColor ?? (dark?AppColors.white.withOpacity(0.5):AppColors.darkerGrey.withOpacity(0.5)),
           shape: BoxShape.circle
       ),
-      child: IconButton(onPressed: onPressed,icon: icon,),
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        onPressed: onPressed,icon: icon,),
     );
   }
 }

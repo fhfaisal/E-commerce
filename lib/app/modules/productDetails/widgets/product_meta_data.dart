@@ -61,14 +61,14 @@ class ProductMetaData extends StatelessWidget {
       const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
 
       /// Brand
-      Row(
+      const Row(
         children: [
           AppRoundedImage(
             imageUrl: AppImageStrings.shoes,
             height: 32,
             width: 32,
           ),
-          const AppBrandTitleTextWithVerifyIcon(title: 'Nike',brandTextSize: TextSizes.medium),
+          AppBrandTitleTextWithVerifyIcon(title: 'Nike',brandTextSize: TextSizes.medium),
         ],
       )
     ]);

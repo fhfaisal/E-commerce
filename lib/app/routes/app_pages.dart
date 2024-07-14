@@ -1,5 +1,11 @@
 import 'package:get/get.dart';
 
+import '../modules/addresses/bindings/addresses_binding.dart';
+import '../modules/addresses/views/addresses_view.dart';
+import '../modules/card/bindings/card_binding.dart';
+import '../modules/card/views/card_view.dart';
+import '../modules/checkout/bindings/checkout_binding.dart';
+import '../modules/checkout/views/checkout_view.dart';
 import '../modules/forgotPassword/bindings/forgot_password_binding.dart';
 import '../modules/forgotPassword/views/forgot_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -85,6 +91,21 @@ class AppPages {
       name: _Paths.REVIEWS_AND_RATING,
       page: () => const ReviewsAndRatingView(),
       binding: ReviewsAndRatingBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDRESSES,
+      page: () => const AddressesView(),
+      binding: AddressesBinding(),
+    ),
+    GetPage(
+      name: _Paths.CARD,
+      page: () => const CardView(),
+      binding: CardBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHECKOUT,
+      page: () => const CheckoutView(),
+      binding: CheckoutBinding(),
     ),
   ];
 }

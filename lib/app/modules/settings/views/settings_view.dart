@@ -2,6 +2,7 @@ import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce/app/common/widgets/containers/primary_header_container.dart';
 import 'package:ecommerce/app/common/widgets/listTile/setting_menu_tile.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class SettingsView extends GetView<SettingsController> {
                 const SizedBox(height: AppSizes.spaceBtwItems),
 
                 AppSettingsMenuTile(
-                  onTap: () {},
+                  onTap: () =>Get.toNamed(Routes.ADDRESSES),
                   icon: Iconsax.safe_home,
                   title: 'My Addresses',
                   subTitle: 'Set shopping delivery address',

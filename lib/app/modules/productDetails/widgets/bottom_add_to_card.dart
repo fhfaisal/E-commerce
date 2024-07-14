@@ -27,11 +27,11 @@ class BottomAddToCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              AppCircularIcon(backgroundColor: dark?AppColors.primary:AppColors.dark, width: 40, height: 40, icon: Icon(Iconsax.minus, color: AppColors.white)),
+              AppCircularIcon(backgroundColor: dark?AppColors.primary:AppColors.dark, width: 40, height: 40, icon: const Icon(Iconsax.minus, color: AppColors.white)),
               const SizedBox(width: AppSizes.spaceBtwItems),
               Text('3',style: Theme.of(context).textTheme.bodyLarge),
               const SizedBox(width: AppSizes.spaceBtwItems),
-              AppCircularIcon(backgroundColor:dark?AppColors.primary:AppColors.dark, width: 40, height: 40, icon: Icon(Iconsax.add, color: AppColors.white)),
+              AppCircularIcon(backgroundColor:dark?AppColors.primary:AppColors.dark, width: 40, height: 40, icon: const Icon(Iconsax.add, color: AppColors.white)),
             ],
           ),
           ElevatedButton(onPressed: (){}, child: const Text('Add to card'))

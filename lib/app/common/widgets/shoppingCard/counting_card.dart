@@ -1,5 +1,7 @@
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -16,7 +18,7 @@ class AppShoppingCountingCard extends StatelessWidget {
     final dark=AppHelperFunction.isDarkMode(context);
     return Stack(
       children: [
-        IconButton(onPressed: onPressed, icon: Icon(Iconsax.shopping_bag,color: color?? (dark?AppColors.white:AppColors.dark))),
+        IconButton(onPressed: () => Get.toNamed(Routes.CARD), icon: Icon(Iconsax.shopping_bag,color: color?? (dark?AppColors.white:AppColors.dark))),
         Positioned(
             right: 0,
             child: Container(

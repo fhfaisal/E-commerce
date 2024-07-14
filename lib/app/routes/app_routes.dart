@@ -14,6 +14,9 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const PRODUCT_DETAILS = _Paths.PRODUCT_DETAILS;
   static const REVIEWS_AND_RATING = _Paths.REVIEWS_AND_RATING;
+  static const ADDRESSES = _Paths.ADDRESSES;
+  static const CARD = _Paths.CARD;
+  static const CHECKOUT = _Paths.CHECKOUT;
 }
 
 abstract class _Paths {
@@ -29,4 +32,7 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const PRODUCT_DETAILS = '/product-details';
   static const REVIEWS_AND_RATING = '/reviews-and-rating';
+  static const ADDRESSES = '/addresses';
+  static const CARD = '/card';
+  static const CHECKOUT = '/checkout';
 }

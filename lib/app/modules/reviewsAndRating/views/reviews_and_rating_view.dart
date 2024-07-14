@@ -1,22 +1,10 @@
 import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
-import 'package:ecommerce/app/common/widgets/containers/circular_container.dart';
-import 'package:ecommerce/app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
-import 'package:ecommerce/app/utils/constants/colors.dart';
-import 'package:ecommerce/app/utils/constants/enams.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
-import 'package:ecommerce/app/utils/device/device_utility.dart';
-import 'package:ecommerce/app/utils/helpers/helper_function.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../../../common/widgets/progressIndicator/rating_indicator.dart';
 import '../../../common/widgets/progressIndicator/star_rating_bar_indicator.dart';
-import '../../../common/widgets/texts/read_more_text.dart';
 import '../controllers/reviews_and_rating_controller.dart';
 import '../widgets/product_overall_ratings.dart';
 import '../widgets/user_review_card.dart';
