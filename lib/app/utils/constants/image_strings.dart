@@ -18,6 +18,7 @@ class AppImageStrings {
   ///Verify Email
   static const verifyEmail = "assets/images/sammy-line-email-confirm.png";
   static const confirmedEmail = "assets/images/sammy-line-man-and-woman-high-fiving-each-other.png";
+  static const success = "assets/images/animations/success.gif";
 
   ///Reset Password
   static const resetPassword = "assets/images/animations/marginalia-password-protection.gif";
@@ -47,5 +48,13 @@ class AppImageStrings {
   static const product9 = "assets/images/products/shoes2.png";
   static const product10 = "assets/images/products/watch1.png";
   static const product11 = "assets/images/products/watch2.png";
-  static const product = "";
+
+  ///Payment Method
+  static const visa = "assets/images/paymentMethod/visa.png";
+  static const applePay = "assets/images/paymentMethod/apple-pay.png";
+  static const googlePay = "assets/images/paymentMethod/google-pay.png";
+  static const masterCard = "assets/images/paymentMethod/master-card.png";
+  static const paypal = "assets/images/paymentMethod/paypal.png";
+  static const paytm = "assets/images/paymentMethod/paytm.png";
+
 }
