@@ -64,7 +64,7 @@ class SettingsView extends GetView<SettingsController> {
                 ),
 
                 AppSettingsMenuTile(
-                  onTap: () {},
+                  onTap: () =>Get.toNamed(Routes.MY_ORDERS),
                   icon: Iconsax.bag_tick,
                   title: 'My Orders',
                   subTitle: 'In-progress and Completed Orders',
