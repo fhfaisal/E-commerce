@@ -67,7 +67,7 @@ final VoidCallback? onTap;
 
                   ///Wish-button
                   const Positioned(
-                    top: 0,
+                    top: 12,
                     right: 0,
                     child: AppCircularIcon(
                       icon: Icon(

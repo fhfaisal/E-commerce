@@ -28,6 +28,8 @@ import '../modules/signIn/bindings/sign_in_binding.dart';
 import '../modules/signIn/views/sign_in_view.dart';
 import '../modules/store/bindings/store_binding.dart';
 import '../modules/store/views/store_view.dart';
+import '../modules/subCategories/bindings/sub_categories_binding.dart';
+import '../modules/subCategories/views/sub_categories_view.dart';
 import '../modules/wishlist/bindings/wishlist_binding.dart';
 import '../modules/wishlist/views/wishlist_view.dart';
 
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.MY_ORDERS,
       page: () => const MyOrdersView(),
       binding: MyOrdersBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUB_CATEGORIES,
+      page: () => const SubCategoriesView(),
+      binding: SubCategoriesBinding(),
     ),
   ];
 }

@@ -1,4 +1,6 @@
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/widgets/verticalImageText/vertical_image_text.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -16,7 +18,9 @@ class HomeCategories extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) =>
-            AppVerticalImageText(text: categories.elementAt(index).text, image: categories.elementAt(index).image),
+            AppVerticalImageText(
+                onTap:() => Get.toNamed(Routes.SUB_CATEGORIES),
+                text: categories.elementAt(index).text, image: categories.elementAt(index).image),
       ),
     );
   }
