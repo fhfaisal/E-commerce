@@ -23,6 +23,7 @@ class CouponWithApply extends StatelessWidget {
           Flexible(
             child: TextFormField(
               decoration: const InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: AppSizes.sm),
                 hintText: 'Have a promo? Enter Here',
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,

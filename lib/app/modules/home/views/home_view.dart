@@ -61,9 +61,9 @@ class HomeView extends GetView<HomeController> {
             ///Slider -Banner
             const PromotionalSlider(banners: [AppImageStrings.banner1, AppImageStrings.banner2, AppImageStrings.banner3]),
             //SizedBox(height: AppSizes.spaceBtwItems),
-            const Padding(
-              padding: EdgeInsets.only(left: AppSizes.paddingMd),
-              child: AppSectionHeading(title: 'Popular Products',action: true),
+            Padding(
+              padding: const EdgeInsets.only(left: AppSizes.paddingMd),
+              child: AppSectionHeading(title: 'Popular Products',action: true,onPressed: () => Get.toNamed(Routes.ALL_PRODUCTS),),
             ),
 
             ///Popular products
