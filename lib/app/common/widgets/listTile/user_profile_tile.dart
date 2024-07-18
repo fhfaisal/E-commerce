@@ -1,4 +1,6 @@
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -22,7 +24,7 @@ class AppUserProfileTile extends StatelessWidget {
       title: Text('Faisal Hasan', style: Theme.of(context).textTheme.headlineSmall!.apply(color: AppColors.white)),
       subtitle: Text('faisalhasan.dev@gmail.com',
           style: Theme.of(context).textTheme.bodyMedium!.apply(color: AppColors.white)),
-      trailing: IconButton(onPressed: () {}, icon: const Icon(Iconsax.edit,color: AppColors.white,)),
+      trailing: IconButton(onPressed: () =>Get.toNamed(Routes.PROFILE), icon: const Icon(Iconsax.edit,color: AppColors.white,)),
     );
   }
 }

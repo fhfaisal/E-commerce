@@ -24,6 +24,8 @@ import '../modules/onBoarding/bindings/on_boarding_binding.dart';
 import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/productDetails/bindings/product_details_binding.dart';
 import '../modules/productDetails/views/product_details_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/reviewsAndRating/bindings/reviews_and_rating_binding.dart';
 import '../modules/reviewsAndRating/views/reviews_and_rating_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
@@ -134,6 +136,11 @@ class AppPages {
       name: _Paths.ALL_BRANDS,
       page: () => const AllBrandsView(),
       binding: AllBrandsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
