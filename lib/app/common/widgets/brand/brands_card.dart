@@ -1,5 +1,6 @@
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
 import '../containers/circular_container.dart';
 import '../roundedImage/circular_image.dart';
@@ -8,17 +9,18 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/enams.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
-class BrandsCard extends StatelessWidget {
-  const BrandsCard({
-    super.key, this.showBorder=true,
+class AppBrandsCard extends StatelessWidget {
+  const AppBrandsCard({
+    super.key, this.showBorder=true, this.onTap,
   });
   final bool showBorder;
+  final Callback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final dark=AppHelperFunction.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: AppCircularContainer(
           paddingAll: AppSizes.sm,
           showBorder: showBorder,

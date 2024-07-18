@@ -1,4 +1,5 @@
 import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
+import 'package:ecommerce/app/common/widgets/brand/brands_card.dart';
 import 'package:ecommerce/app/common/widgets/layouts/gridview_layout.dart';
 import 'package:ecommerce/app/modules/home/widgets/product_card_vertical.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -14,10 +15,10 @@ class AllProductsView extends GetView<AllProductsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppAppBar(title: Text('Popular Produtcts')),
+      appBar: const AppAppBar(title: Text('Popular Products')),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(AppSizes.defaultSpace),
+          padding: const EdgeInsets.fromLTRB(AppSizes.defaultSpace,0,AppSizes.defaultSpace,AppSizes.defaultSpace,),
           child: Column(
             children: [
               ///Dropdown
@@ -34,8 +35,13 @@ class AllProductsView extends GetView<AllProductsController> {
                         )))
                     .toList(),
               ),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               ///Products
-              AppGridViewLayout(itemCount: 10, itemBuilder: (context, p1) => const ProductCardVertical(),)
+              //AppGridViewLayout(itemCount: 10, itemBuilder: (context, p1) => const ProductCardVertical(),),
+              AppGridViewLayout(
+                itemCount: 10,
+                itemBuilder: (context, p1) => const ProductCardVertical(),),
+
             ],
           ),
         ),

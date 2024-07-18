@@ -4,14 +4,18 @@ import 'package:ecommerce/app/common/widgets/containers/search_container.dart';
 import 'package:ecommerce/app/common/widgets/layouts/gridview_layout.dart';
 import 'package:ecommerce/app/common/widgets/shoppingCard/counting_card.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../common/widgets/brand/brands_card.dart';
+import '../../navigationBar/controllers/navigation_bar_controller.dart';
 import '../controllers/store_controller.dart';
 import '../widgets/categories.dart';
 
@@ -27,6 +31,8 @@ class StoreView extends GetView<StoreController> {
           appBar: AppAppBar(
             title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
             showBackArrow: false,
+            //leadingIcon: Iconsax.arrow_left,
+            //leadingOnPressed: () => NavigationBarController.instance.screen[NavigationBarController.instance.selectedIndex.value=0],
             actions: [
               AppShoppingCountingCard(onPressed: () {},),
             ],
@@ -53,14 +59,14 @@ class StoreView extends GetView<StoreController> {
                             const SizedBox(height: AppSizes.spaceBtwSections),
 
                             ///Feature Brands
-                            const AppSectionHeading(title: 'Feature Brands'),
+                            AppSectionHeading(title: 'Feature Brands',onPressed: () =>Get.toNamed(Routes.ALL_BRANDS) ,),
                             const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
 
                             ///Brands Grid
                             AppGridViewLayout(
                               itemCount: 4,
                               mainAxisExtent: 80,
-                              itemBuilder: (context, index) => const BrandsCard(),
+                              itemBuilder: (context, index) => const AppBrandsCard(),
                             ),
                           ],
                         ),

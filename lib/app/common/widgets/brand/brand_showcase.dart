@@ -23,7 +23,7 @@ class AppBrandShowCase extends StatelessWidget {
       child: Column(
         children: [
           ///Brands with product count
-          const BrandsCard(showBorder: false,),
+          const AppBrandsCard(showBorder: false,),
           const SizedBox(height: AppSizes.spaceBtwItems),
 
           ///Brands top 3 products
