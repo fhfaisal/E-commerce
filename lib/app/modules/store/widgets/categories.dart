@@ -1,4 +1,6 @@
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/widgets/brand/brand_showcase.dart';
 import '../../../common/widgets/layouts/gridview_layout.dart';
@@ -31,7 +33,7 @@ class AppCategoriesTab extends StatelessWidget {
           const SizedBox(height: AppSizes.spaceBtwItems),
           AppGridViewLayout(
             itemCount: 4,
-            itemBuilder: (context, index) => const ProductCardVertical(),)
+            itemBuilder: (context, index) => ProductCardVertical(onTap:() =>  Get.toNamed(Routes.PRODUCT_DETAILS)),)
         ],),
       ],
     );

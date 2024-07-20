@@ -4,6 +4,7 @@ import 'package:ecommerce/app/common/widgets/containers/search_container.dart';
 import 'package:ecommerce/app/common/widgets/layouts/gridview_layout.dart';
 import 'package:ecommerce/app/common/widgets/shoppingCard/counting_card.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce/app/modules/allBrands/widgets/brands_details.dart';
 import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -66,7 +67,7 @@ class StoreView extends GetView<StoreController> {
                             AppGridViewLayout(
                               itemCount: 4,
                               mainAxisExtent: 80,
-                              itemBuilder: (context, index) => const AppBrandsCard(),
+                              itemBuilder: (context, index) => AppBrandsCard( onTap: () => Get.to(()=>const BrandDetails()),),
                             ),
                           ],
                         ),

@@ -14,7 +14,7 @@ class BrandDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppAppBar(title: Text('Popular Products')),
+      appBar: const AppAppBar(title: Text('Brand Name')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(

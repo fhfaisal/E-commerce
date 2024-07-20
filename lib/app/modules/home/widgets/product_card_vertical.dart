@@ -3,6 +3,7 @@ import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
 import 'package:ecommerce/app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../common/styles/shadow_style.dart';
@@ -15,7 +16,7 @@ import '../../../utils/helpers/helper_function.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key, this.onTap});
-final VoidCallback? onTap;
+final Callback? onTap;
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunction.isDarkMode(context);
@@ -84,6 +85,7 @@ final VoidCallback? onTap;
             const Padding(
               padding: EdgeInsets.only(left: AppSizes.sm),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ///Title
                   AppProductTitleText(title: 'watch uashgfuigasiufgsgafgahgzvgsdgfwi', maxLine: 2),

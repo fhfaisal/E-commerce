@@ -53,7 +53,7 @@ class ProfileView extends GetView<ProfileController> {
               AppProfileMenuTile(leadingText: 'Phone Number', title: '01644485591', onTap: () {}),
               AppProfileMenuTile(leadingText: 'Gender', title: 'Male', onTap: () {}),
               AppProfileMenuTile(leadingText: 'Date of Birth', title: '25-12-2000', onTap: () {}),
-              Divider(),
+              const Divider(),
               const SizedBox(height: AppSizes.spaceBtwItems),
               TextButton(onPressed: (){}, child: Text('Delete Account',style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.red),))
         

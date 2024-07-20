@@ -9,7 +9,7 @@ class ProductOverallRatings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Expanded(flex: 3, child: Text("14.8", style: Theme.of(context).textTheme.headlineLarge)),
+      Expanded(flex: 3, child: Text("4.2", style: Theme.of(context).textTheme.headlineLarge)),
       const Expanded(
         flex: 7,
         child: Column(
