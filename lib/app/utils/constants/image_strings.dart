@@ -57,4 +57,7 @@ class AppImageStrings {
   static const paypal = "assets/images/paymentMethod/paypal.png";
   static const paytm = "assets/images/paymentMethod/paytm.png";
 
+  ///Lottie
+  static const loading = "assets/images/lotties/loading.json";
+
 }

@@ -20,6 +20,8 @@ import '../modules/myOrders/bindings/my_orders_binding.dart';
 import '../modules/myOrders/views/my_orders_view.dart';
 import '../modules/navigationBar/bindings/navigation_bar_binding.dart';
 import '../modules/navigationBar/views/navigation_bar_view.dart';
+import '../modules/networkManager/bindings/network_manager_binding.dart';
+import '../modules/networkManager/views/network_manager_view.dart';
 import '../modules/onBoarding/bindings/on_boarding_binding.dart';
 import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/productDetails/bindings/product_details_binding.dart';
@@ -141,6 +143,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.NETWORK_MANAGER,
+      page: () => const NetworkManagerView(),
+      binding: NetworkManagerBinding(),
     ),
   ];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../routes/app_pages.dart';
 
@@ -7,6 +8,7 @@ class OnBoardingController extends GetxController {
   ///Variables
   final PageController pageController = PageController(initialPage: 0);
   Rx<int> currentPage = 0.obs;
+  final _storage=GetStorage();
 
   ///Update current index when page scroll
   void updatePageIndicator(int index) {
@@ -28,13 +30,11 @@ class OnBoardingController extends GetxController {
   void skipPage() {
     currentPage.value = 2;
     pageController.jumpToPage(2);
+    navigateToLogin();
   }
 
   navigateToLogin() {
     Get.offAllNamed(Routes.LOGIN);
-  }
-
-  onBoardingDone() {
-    navigateToLogin();
+    _storage.write("isOnBoardingDone", false);
   }
 }

@@ -22,6 +22,7 @@ abstract class Routes {
   static const ALL_PRODUCTS = _Paths.ALL_PRODUCTS;
   static const ALL_BRANDS = _Paths.ALL_BRANDS;
   static const PROFILE = _Paths.PROFILE;
+  static const NETWORK_MANAGER = _Paths.NETWORK_MANAGER;
 }
 
 abstract class _Paths {
@@ -45,4 +46,5 @@ abstract class _Paths {
   static const ALL_PRODUCTS = '/all-products';
   static const ALL_BRANDS = '/all-brands';
   static const PROFILE = '/profile';
+  static const NETWORK_MANAGER = '/network-manager';
 }
