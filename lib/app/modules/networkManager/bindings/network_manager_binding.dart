@@ -8,5 +8,6 @@ class NetworkManagerBinding extends Bindings {
     Get.lazyPut<NetworkManagerController>(
       () => NetworkManagerController(),
     );
+    Get.put(NetworkManagerController);
   }
 }

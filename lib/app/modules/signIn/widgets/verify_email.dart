@@ -31,7 +31,7 @@ class VerifyEmail extends StatelessWidget {
 
                 ///Title and subtitle
                 Text(
-                  AppText.confireEmail,
+                  AppText.confirmEmail,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -60,7 +60,7 @@ class VerifyEmail extends StatelessWidget {
                           buttonText: AppText.tContinue,
                           onPressed: () => Get.to(const LoginView()),
                         )),
-                    child: const Text(AppText.signIn),
+                    child: const Text(AppText.done),
                   ),
                 ),
                 const SizedBox(height: AppSizes.spaceBtwItems),

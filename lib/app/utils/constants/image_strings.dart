@@ -17,7 +17,7 @@ class AppImageStrings {
 
   ///Verify Email
   static const verifyEmail = "assets/images/sammy-line-email-confirm.png";
-  static const confirmedEmail = "assets/images/sammy-line-man-and-woman-high-fiving-each-other.png";
+  static const confirmedEmail = "assets/images/animations/success.gif";
   static const success = "assets/images/animations/success.gif";
 
   ///Reset Password

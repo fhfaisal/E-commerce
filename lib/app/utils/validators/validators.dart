@@ -27,8 +27,10 @@ class AppValidators {
       return 'Password is required.';
     }
     // Check for minimum password length
-    if (value.length < 6) {}
-    return 'Password must be at least 6 characters long.';
+    if (value.length < 6) {
+      return 'Password must be at least 6 characters long.';
+    }
+    return null;
   }
 
   static String? validatePhoneNumber(String? value) {
@@ -38,7 +40,7 @@ class AppValidators {
 // Regular expression for phone number validation (assuming a 10-digit US phone number format)
     final phoneRegExp = RegExp(r'^\d{11}$');
     if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
+      return 'Invalid phone number format (11 digits required).';
     }
     return null;
   }

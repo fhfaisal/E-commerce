@@ -21,7 +21,7 @@ import '../modules/myOrders/views/my_orders_view.dart';
 import '../modules/navigationBar/bindings/navigation_bar_binding.dart';
 import '../modules/navigationBar/views/navigation_bar_view.dart';
 import '../modules/networkManager/bindings/network_manager_binding.dart';
-import '../modules/networkManager/views/network_manager_view.dart';
+import '../modules/networkManager/view/network_manager_view.dart';
 import '../modules/onBoarding/bindings/on_boarding_binding.dart';
 import '../modules/onBoarding/views/on_boarding_view.dart';
 import '../modules/productDetails/bindings/product_details_binding.dart';
