@@ -15,6 +15,7 @@ import '../../../common/widgets/social_buttons.dart';
 class LoginView extends GetView<LoginController> {
   const LoginView({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunction.isDarkMode(context);

@@ -10,6 +10,8 @@ import '../modules/card/bindings/card_binding.dart';
 import '../modules/card/views/card_view.dart';
 import '../modules/checkout/bindings/checkout_binding.dart';
 import '../modules/checkout/views/checkout_view.dart';
+import '../modules/emailVerify/bindings/email_verify_binding.dart';
+import '../modules/emailVerify/views/email_verify_view.dart';
 import '../modules/forgotPassword/bindings/forgot_password_binding.dart';
 import '../modules/forgotPassword/views/forgot_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -148,6 +150,11 @@ class AppPages {
       name: _Paths.NETWORK_MANAGER,
       page: () => const NetworkManagerView(),
       binding: NetworkManagerBinding(),
+    ),
+    GetPage(
+      name: _Paths.EMAIL_VERIFY,
+      page: () => const EmailVerifyView(),
+      binding: EmailVerifyBinding(),
     ),
   ];
 }

@@ -1,24 +1,26 @@
-import 'package:ecommerce/app/common/widgets/success_screen.dart';
-import 'package:ecommerce/app/modules/login/views/login_view.dart';
+import 'dart:ffi';
+
 import 'package:ecommerce/app/routes/app_pages.dart';
-import 'package:ecommerce/app/utils/constants/image_strings.dart';
-import 'package:ecommerce/app/utils/constants/sizes.dart';
-import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
+import '../../../common/widgets/success_screen.dart';
 import '../../../utils/constants/app_text.dart';
+import '../../../utils/constants/image_strings.dart';
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/helpers/helper_function.dart';
+import '../controllers/email_verify_controller.dart';
 
-class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({super.key, this.email});
-final String? email;
+class EmailVerifyView extends GetView<EmailVerifyController> {
+  const EmailVerifyView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actions: [IconButton(onPressed: () => Get.back(), icon: const Icon(CupertinoIcons.clear))],
+        actions: [IconButton(onPressed: () => Get.offAllNamed(Routes.LOGIN), icon: const Icon(CupertinoIcons.clear))],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -37,7 +39,7 @@ final String? email;
                 ),
                 const SizedBox(height: AppSizes.spaceBtwItems),
                 Text(
-                  email??'Check your email',
+                  controller.email.value.text,
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -54,12 +56,12 @@ final String? email;
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Get.to(() => SuccessScreen(
-                          image: AppImageStrings.confirmedEmail,
-                          title: AppText.yourAccountCreatedTitle,
-                          subtitle: AppText.yourAccountCreatedSubTitle,
-                          buttonText: AppText.tContinue,
-                          onPressed: () => Get.to(const LoginView()),
-                        )),
+                      image: AppImageStrings.confirmedEmail,
+                      title: AppText.yourAccountCreatedTitle,
+                      subtitle: AppText.yourAccountCreatedSubTitle,
+                      buttonText: AppText.tContinue,
+                      onPressed: () => null),
+                    ),
                     child: const Text(AppText.done),
                   ),
                 ),

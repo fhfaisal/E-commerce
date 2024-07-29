@@ -23,6 +23,7 @@ abstract class Routes {
   static const ALL_BRANDS = _Paths.ALL_BRANDS;
   static const PROFILE = _Paths.PROFILE;
   static const NETWORK_MANAGER = _Paths.NETWORK_MANAGER;
+  static const EMAIL_VERIFY = _Paths.EMAIL_VERIFY;
 }
 
 abstract class _Paths {
@@ -47,4 +48,5 @@ abstract class _Paths {
   static const ALL_BRANDS = '/all-brands';
   static const PROFILE = '/profile';
   static const NETWORK_MANAGER = '/network-manager';
+  static const EMAIL_VERIFY = '/email-verify';
 }

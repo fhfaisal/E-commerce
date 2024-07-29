@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/app_text.dart';
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/validators/validators.dart';
 
 class AppLoginForm extends GetView<LoginController> {
   const AppLoginForm({
@@ -14,6 +15,7 @@ class AppLoginForm extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: controller.loginFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: AppSizes.spaceBtwSections),
         child: Column(
@@ -21,18 +23,25 @@ class AppLoginForm extends GetView<LoginController> {
           children: [
             ///Email
             TextFormField(
+              controller: controller.email.value,
+              validator: (value) => AppValidators.validateEmail(value),
               decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: AppText.email),
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields),
 
             ///Password
-            TextFormField(
+            Obx(() => TextFormField(
+              controller: controller.password.value,
+              obscureText: controller.showPassword.value,
+              validator: (value) => AppValidators.validatePassword(value),
               decoration: InputDecoration(
-                prefixIcon: const Icon(Iconsax.password_check),
-                labelText: AppText.password,
-                suffixIcon: IconButton(onPressed: () {}, icon: const Icon(Iconsax.eye_slash),)
-              ),
-            ),
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  labelText: AppText.password,
+                  suffixIcon: IconButton(
+                    onPressed: () => controller.showPassword.value = !controller.showPassword.value,
+                    icon: Icon(controller.showPassword.value?Iconsax.eye_slash:Iconsax.eye),
+                  )),
+            )),
             const SizedBox(height: AppSizes.spaceBtwInputFields / 2),
 
             ///Remember me & forgot password
@@ -42,10 +51,13 @@ class AppLoginForm extends GetView<LoginController> {
                 ///Remember me
                 Row(
                   children: [
-                    Checkbox(
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      value: true,
-                      onChanged: (value) {},
+                    SizedBox(
+                        height: 24,
+                        width: 24,
+                        child: Obx(() => Checkbox(
+                          value: controller.remember.value,
+                          onChanged: (value) => controller.remember.value = !controller.remember.value,
+                        ))
                     ),
                     const Text(AppText.rememberMe)
                   ],
@@ -61,7 +73,7 @@ class AppLoginForm extends GetView<LoginController> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () =>controller.navigateToHomePage(),
+                onPressed: () =>controller.login(),
                 child: const Text(AppText.signIn),
               ),
             ),

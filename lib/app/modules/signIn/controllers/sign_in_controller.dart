@@ -53,7 +53,7 @@ class SignInController extends GetxController {
             message: 'In order to create account you have to read Privacy Policy and Terms of use');
       }
       /// Start Loading
-      FullScreenLoader.openLoadingDialog('We processing your information', AppImageStrings.loading);
+      FullScreenLoader.openLoadingDialog('We processing your information',animation: AppImageStrings.loading);
 
       /// Register user in the Firebase Authentication & Save user data in the Firebase
       final userCredential = await AuthenticationRepository.instance

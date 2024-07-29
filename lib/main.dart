@@ -32,7 +32,7 @@ Future<void> main() async {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       initialBinding: NetworkManagerBinding(),
-      initialRoute: AppPages.INITIAL,
+      //initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       home: const Scaffold(body: Center(child: CircularProgressIndicator())),
     ),

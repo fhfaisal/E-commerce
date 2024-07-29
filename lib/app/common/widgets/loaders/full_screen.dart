@@ -4,6 +4,7 @@ import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/constants/image_strings.dart';
 import '../../../utils/helpers/helper_function.dart';
 
 /// A utility class for managing a full-screen loading dialog.
@@ -19,7 +20,7 @@ class FullScreenLoader {
 
   /// animation: The Lottie animation to be shown.
 
-  static void openLoadingDialog(String text, String animation) {
+  static void openLoadingDialog(String? text, {String? animation}) {
     showDialog(
         context: Get.overlayContext!, // Use Get.overlayContext for overlay dialogs
         barrierDismissible: false, // The dialog can't be dismissed by tapping outside it
@@ -32,8 +33,8 @@ class FullScreenLoader {
                 child: Column(children: [
                   const SizedBox(height: 250),
                   AnimationLoaderWidget(
-                    text: text,
-                    animation: animation,
+                    text: text??'Processing please wait',
+                    animation: animation??AppImageStrings.loading,
                   )
                 ]), // Column ), // Container
               ), // PopScope

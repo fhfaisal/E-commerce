@@ -130,7 +130,7 @@ class SettingsView extends GetView<SettingsController> {
                 const SizedBox(height: AppSizes.spaceBtwSections),
                 SizedBox(
                   width: double.infinity,
-                  child: OutlinedButton(onPressed: () {}, child: const Text('Logout')),
+                  child: OutlinedButton(onPressed: () => Get.offAllNamed(Routes.LOGIN), child: const Text('Logout')),
                 ), // SizedBox
 
                 const SizedBox(height: AppSizes.spaceBtwSections * 2.5),
