@@ -1,13 +1,15 @@
 import 'package:ecommerce/app/common/widgets/loaders/full_screen.dart';
 import 'package:ecommerce/app/data/repository/authentication/authentication_repository.dart';
 import 'package:ecommerce/app/data/repository/user/user_model.dart';
+import 'package:ecommerce/app/modules/emailVerify/views/email_verify_view.dart';
 import 'package:ecommerce/app/modules/networkManager/controllers/network_manager_controller.dart';
-import 'package:ecommerce/app/modules/signIn/widgets/verify_email.dart';
+import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/image_strings.dart';
 import 'package:ecommerce/app/utils/snakbar/snackbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../data/repository/user/user_repository.dart';
 
@@ -17,6 +19,7 @@ class SignInController extends GetxController {
 
   final userRepository = Get.put(UserRepository());
   final net = Get.put(NetworkManagerController());
+  final storage=GetStorage();
 
   /// Text Controller
   final firstName = TextEditingController().obs;
@@ -73,10 +76,13 @@ class SignInController extends GetxController {
 
       ///Newly created user pass to the user repo for saving user data
       await userRepository.saveUserRecord(newUser);
+      ///Saved email and password in the storage
+      storage.writeIfNull('REMEMBER_ME_EMAIL', email.value.text.trim());
+      storage.writeIfNull('REMEMBER_ME_PASSWORD', password.value.text.trim());
 
       /// Show Success Message
       SnackBarMessage.success(title: 'Congratulations',message: 'Your account has been created!. Verify email to continue');
-      Get.to(()=>const VerifyEmail());
+      Get.toNamed(Routes.EMAIL_VERIFY,arguments: newUser.email);
     } catch (e) {
       FullScreenLoader.stopLoadingDialog();
       if(kDebugMode){

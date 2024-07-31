@@ -2,6 +2,7 @@ import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce/app/common/widgets/containers/primary_header_container.dart';
 import 'package:ecommerce/app/common/widgets/listTile/setting_menu_tile.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce/app/data/repository/authentication/authentication_repository.dart';
 import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
@@ -130,7 +131,7 @@ class SettingsView extends GetView<SettingsController> {
                 const SizedBox(height: AppSizes.spaceBtwSections),
                 SizedBox(
                   width: double.infinity,
-                  child: OutlinedButton(onPressed: () => Get.offAllNamed(Routes.LOGIN), child: const Text('Logout')),
+                  child: OutlinedButton(onPressed: () => AuthenticationRepository.instance.logOut(), child: const Text('Logout')),
                 ), // SizedBox
 
                 const SizedBox(height: AppSizes.spaceBtwSections * 2.5),

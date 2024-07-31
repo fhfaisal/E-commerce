@@ -1,12 +1,9 @@
-import 'dart:ffi';
-
 import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../common/widgets/success_screen.dart';
 import '../../../utils/constants/app_text.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
@@ -15,8 +12,10 @@ import '../controllers/email_verify_controller.dart';
 
 class EmailVerifyView extends GetView<EmailVerifyController> {
   const EmailVerifyView({super.key});
+
   @override
   Widget build(BuildContext context) {
+    //final controller = Get.put(EmailVerifyController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -39,7 +38,7 @@ class EmailVerifyView extends GetView<EmailVerifyController> {
                 ),
                 const SizedBox(height: AppSizes.spaceBtwItems),
                 Text(
-                  controller.email.value.text,
+                  controller.email ?? '',
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -55,14 +54,8 @@ class EmailVerifyView extends GetView<EmailVerifyController> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => Get.to(() => SuccessScreen(
-                      image: AppImageStrings.confirmedEmail,
-                      title: AppText.yourAccountCreatedTitle,
-                      subtitle: AppText.yourAccountCreatedSubTitle,
-                      buttonText: AppText.tContinue,
-                      onPressed: () => null),
-                    ),
-                    child: const Text(AppText.done),
+                    onPressed: () => controller.checkEmailVerificationStatus(),
+                    child: const Text('Continue'),
                   ),
                 ),
                 const SizedBox(height: AppSizes.spaceBtwItems),
@@ -70,7 +63,7 @@ class EmailVerifyView extends GetView<EmailVerifyController> {
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () =>controller.sendEmailVerification(),
                     child: const Text(AppText.resendEmail),
                   ),
                 ),
