@@ -73,7 +73,7 @@ class AppLoginForm extends GetView<LoginController> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () =>controller.login(),
+                onPressed: () =>controller.loginWithEmailAndPassword(),
                 child: const Text(AppText.signIn),
               ),
             ),

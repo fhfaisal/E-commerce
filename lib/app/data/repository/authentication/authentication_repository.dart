@@ -8,7 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../../modules/login/controllers/user_controller.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -17,6 +19,8 @@ class AuthenticationRepository extends GetxController {
   ///variable
   final storage = GetStorage();
   final _auth = FirebaseAuth.instance;
+
+  final userController = Get.put(UserController());
 
   @override
   void onReady() {
@@ -38,9 +42,7 @@ class AuthenticationRepository extends GetxController {
       //local storage
       storage.writeIfNull("isOnBoardingDone", true);
       //Check is the app lunched first time or not
-      storage.read('isOnBoardingDone') != true
-          ? Get.offAllNamed(Routes.LOGIN)
-          : Get.offAllNamed(Routes.ON_BOARDING);
+      storage.read('isOnBoardingDone') != true ? Get.offAllNamed(Routes.LOGIN) : Get.offAllNamed(Routes.ON_BOARDING);
     }
   }
 
@@ -94,9 +96,44 @@ class AuthenticationRepository extends GetxController {
       throw "Something went wrong please try again";
     }
   }
+
+  /*---------------------Federated Identity and Social Sign in-----------------------------------*/
+
+  ///Google Sign in
+
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth =
+      await googleUser?.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      return await FirebaseAuth.instance.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseException(e.code).message;
+    } on FormatException catch (e) {
+      throw AppFormatException(e.message);
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw "Something went wrong please try again";
+    }
+  }
+
+  /*---------------------Federated Identity and Social Sign in-----------------------------------*/
+
   ///Log out the user
   Future<void> logOut() async {
     try {
+      //Sign out the current user to ensure the account chooser is displayed
+      await GoogleSignIn().signOut();
       await _auth.signOut();
       Get.offAllNamed(Routes.LOGIN);
     } on FirebaseAuthException catch (e) {

@@ -56,7 +56,7 @@ class SignInController extends GetxController {
             message: 'In order to create account you have to read Privacy Policy and Terms of use');
       }
       /// Start Loading
-      FullScreenLoader.openLoadingDialog('We processing your information',animation: AppImageStrings.loading);
+      FullScreenLoader.startLoading('We processing your information',animation: AppImageStrings.loading);
 
       /// Register user in the Firebase Authentication & Save user data in the Firebase
       final userCredential = await AuthenticationRepository.instance
@@ -69,7 +69,6 @@ class SignInController extends GetxController {
         lastName: lastName.value.text.trim(),
         username: username.value.text.trim(),
         email: email.value.text.trim(),
-        password: password.value.text.trim(),
         phone: phone.value.text.trim(),
         profilePicture: '',
       );
@@ -77,14 +76,14 @@ class SignInController extends GetxController {
       ///Newly created user pass to the user repo for saving user data
       await userRepository.saveUserRecord(newUser);
       ///Saved email and password in the storage
-      storage.writeIfNull('REMEMBER_ME_EMAIL', email.value.text.trim());
-      storage.writeIfNull('REMEMBER_ME_PASSWORD', password.value.text.trim());
+      storage.write('REMEMBER_ME_EMAIL', email.value.text.trim());
+      storage.write('REMEMBER_ME_PASSWORD', password.value.text.trim());
 
       /// Show Success Message
       SnackBarMessage.success(title: 'Congratulations',message: 'Your account has been created!. Verify email to continue');
-      Get.toNamed(Routes.EMAIL_VERIFY,arguments: newUser.email);
+      Get.offAllNamed(Routes.EMAIL_VERIFY,arguments: newUser.email);
     } catch (e) {
-      FullScreenLoader.stopLoadingDialog();
+      FullScreenLoader.stopLoading();
       if(kDebugMode){
         print(e);
       }

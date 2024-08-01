@@ -20,7 +20,7 @@ class FullScreenLoader {
 
   /// animation: The Lottie animation to be shown.
 
-  static void openLoadingDialog(String? text, {String? animation}) {
+  static void startLoading(String? text, {String? animation}) {
     showDialog(
         context: Get.overlayContext!, // Use Get.overlayContext for overlay dialogs
         barrierDismissible: false, // The dialog can't be dismissed by tapping outside it
@@ -41,7 +41,7 @@ class FullScreenLoader {
             ));
   }
 
-  static void stopLoadingDialog() {
+  static void stopLoading() {
     Navigator.of(Get.overlayContext!).pop();
   }
 }

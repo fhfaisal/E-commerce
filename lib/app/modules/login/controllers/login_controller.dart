@@ -1,5 +1,6 @@
 import 'package:ecommerce/app/common/widgets/loaders/full_screen.dart';
 import 'package:ecommerce/app/data/repository/authentication/authentication_repository.dart';
+import 'package:ecommerce/app/modules/login/controllers/user_controller.dart';
 import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:ecommerce/app/utils/snakbar/snackbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +29,17 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // Read stored email and password
+    // /// Check Internet Connectivity
+    // final isConnected = await net.isConnected();
+    // if (!isConnected) {
+    //   SnackBarMessage.error(
+    //     title: 'Network Error',
+    //     message: 'No internet connection',
+    //   );
+    //   return;
+    // }
+
+    /// Read stored email and password
     String? storedEmail = deviceStorage.read("REMEMBER_ME_EMAIL");
     String? storedPassword = deviceStorage.read("REMEMBER_ME_PASSWORD");
 
@@ -36,7 +47,6 @@ class LoginController extends GetxController {
     if (storedEmail != null) {
       email.value.text = storedEmail;
     }
-
     if (storedPassword != null) {
       password.value.text = storedPassword;
     }
@@ -51,7 +61,7 @@ class LoginController extends GetxController {
   void navigateToForgotPasswordPage() => Get.toNamed(Routes.FORGOT_PASSWORD);
 
   /// Login using email and password
-  Future<void> login() async {
+  Future<void> loginWithEmailAndPassword() async {
     try {
       /// Check Internet Connectivity
       final isConnected = await net.isConnected();
@@ -69,7 +79,7 @@ class LoginController extends GetxController {
       }
 
       /// Start loading indicator
-      FullScreenLoader.openLoadingDialog(
+      FullScreenLoader.startLoading(
         "We processing your information",
       );
 
@@ -86,8 +96,25 @@ class LoginController extends GetxController {
       navigateToHomePage();
     } catch (e) {
       // Show error message
-      FullScreenLoader.stopLoadingDialog();
+      FullScreenLoader.stopLoading();
       SnackBarMessage.warning(title: 'Oh Snap', message: e.toString());
+    }
+  }
+
+  ///Login With Google
+  Future<void> googleSignIn() async {
+    try {
+      /// Check Internet Connectivity
+      final isConnected = await net.isConnected();
+      if (!isConnected) return;
+      //Google authentication
+      final userCredential = await AuthenticationRepository.instance.signInWithGoogle();
+      //Save user record
+      //userController.saveUserRecord(userCredential);
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      print(e.toString());
+      SnackBarMessage.error(title: 'Oh Snap', message: e.toString());
     }
   }
 }

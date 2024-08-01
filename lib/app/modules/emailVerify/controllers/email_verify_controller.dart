@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:ecommerce/app/data/repository/authentication/authentication_repository.dart';
 import 'package:ecommerce/app/utils/snakbar/snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../common/widgets/success_screen.dart';
-import '../../../routes/app_pages.dart';
 import '../../../utils/constants/app_text.dart';
 import '../../../utils/constants/image_strings.dart';
+import '../../networkManager/controllers/network_manager_controller.dart';
 
 class EmailVerifyController extends GetxController {
 
   final email = Get.arguments;
   final _authRepo = Get.put(AuthenticationRepository());
+  final net = Get.put(NetworkManagerController());
 
   Timer? timer;
   int start = 30;
@@ -29,10 +29,23 @@ class EmailVerifyController extends GetxController {
   }
 
 
+  @override
+  void onClose() {
+
+  }
 
   ///Send Email Verification
   sendEmailVerification() async {
     try {
+      /// Check Internet Connectivity
+      final isConnected = await net.isConnected();
+      if (!isConnected) {
+        SnackBarMessage.error(
+          title: 'Network Error',
+          message: 'No internet connection',
+        );
+        return;
+      }
       await _authRepo.sendEmailVerification();
       SnackBarMessage.success(title: 'Email send', message: "Please check your inbox and verify your email");
     } catch (e) {
@@ -64,7 +77,7 @@ class EmailVerifyController extends GetxController {
 
   ///navigate to success screen
   navigateToSuccessScreen() {
-    Get.to(() =>
+    Get.offAll(() =>
         SuccessScreen(
           image: AppImageStrings.confirmedEmail,
           title: AppText.yourAccountCreatedTitle,

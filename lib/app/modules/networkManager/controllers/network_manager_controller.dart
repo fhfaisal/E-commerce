@@ -10,12 +10,9 @@ class NetworkManagerController extends GetxController {
   static NetworkManagerController get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
-
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-
   final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
 
-  /// Initialize the network manager and set up a stream to continually check the connection status.
   @override
   void onInit() {
     super.onInit();
@@ -28,23 +25,34 @@ class NetworkManagerController extends GetxController {
     super.onClose();
   }
 
-  /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
+  ///Check and update connection status
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
 
     if (_connectionStatus.value == ConnectivityResult.none) {
-      // Ensure you handle this in a UI context
-      SnackBarMessage.warning(title: "No Internet Connection");
+      // Show the SnackBar for no internet connection
+      SnackBarMessage.customToast(title: "No Internet Connection");
+    } else {
+      // Hide the SnackBar when internet connection is restored
+      SnackBarMessage.hideSnackBar();
     }
   }
 
-  /// Check the internet connection status.
-  /// Returns true if connected, 'false' otherwise.
+  ///Check internet connections
   Future<bool> isConnected() async {
     try {
       final result = await _connectivity.checkConnectivity();
-      return result != ConnectivityResult.none;
+      if (result == ConnectivityResult.none) {
+        // No internet connection
+        SnackBarMessage.customToast(title: "No Internet Connection");
+        return false;
+      } else {
+        // Internet connection available
+        SnackBarMessage.hideSnackBar();
+        return true;
+      }
     } on PlatformException catch (e) {
+      // Handle the platform exception if needed
       return false;
     }
   }
