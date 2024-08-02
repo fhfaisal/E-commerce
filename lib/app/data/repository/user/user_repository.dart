@@ -3,7 +3,7 @@ import 'package:ecommerce/app/data/repository/user/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
+//Repository class for user-related data operations
 class UserRepository extends GetxController{
   static UserRepository get instance=>Get.find();
 

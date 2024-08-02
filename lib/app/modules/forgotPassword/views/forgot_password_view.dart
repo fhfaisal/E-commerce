@@ -1,6 +1,7 @@
-import 'package:ecommerce/app/modules/forgotPassword/widgets/reset_passord.dart';
+import 'package:ecommerce/app/modules/forgotPassword/widgets/reset_password.dart';
 import 'package:ecommerce/app/utils/constants/app_text.dart';
 import 'package:ecommerce/app/utils/constants/sizes.dart';
+import 'package:ecommerce/app/utils/validators/validators.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -27,6 +28,8 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
 
             ///TextField
             TextFormField(
+              controller: controller.email.value,
+              validator: (value) => AppValidators.validateEmail(value),
               decoration: const InputDecoration(hintText: AppText.email, prefixIcon: Icon(Iconsax.direct_right)),
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
@@ -35,7 +38,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() =>const ResetPassword()),
+                onPressed: () => controller.sendResetPassword(),
                 child: const Text(AppText.done),
               ),
             ),
