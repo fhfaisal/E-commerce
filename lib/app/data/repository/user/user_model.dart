@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../../../utils/formatters/formatters.dart';
 
 class UserModel {
@@ -66,16 +68,16 @@ class UserModel {
     return toMap();
   }
 
-  // Method to create a UserModel from a map (e.g., from Firestore/Database)
-  factory UserModel.fromMap(Map<String, dynamic> map) {
+  // Method to create a UserModel from a map (e.g., from FireStore/Database)
+  factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
     return UserModel(
-      id: map['id'],
-      firstName: map['firstName'],
-      lastName: map['lastName'],
-      username: map['username'],
-      email: map['email'],
-      phone: map['phone'],
-      profilePicture: map['profilePicture'],
+      id: document['id'] ?? '',
+      firstName: document['firstName'] ?? '',
+      lastName: document['lastName'] ?? '',
+      username: document['username'] ?? '',
+      email: document['email'] ?? '',
+      phone: document['phone'] ?? '',
+      profilePicture: document['profilePicture'] ?? '',
     );
   }
 }

@@ -7,6 +7,15 @@ import 'package:get/get.dart';
 class UserController extends GetxController {
   static UserController get instance => Get.find();
   final UserRepository userRepository=Get.put(UserRepository());
+  Rx<UserModel> user = UserModel.empty().obs;
+
+
+  @override
+  void onInit() {
+    super.onInit();
+    fetchUserData();
+  }
+
 
   ///Save record from any registration provider
   Future<void> saveUserRecord(UserCredential? userCredential) async {
@@ -35,6 +44,15 @@ class UserController extends GetxController {
       SnackBarMessage.warning(
           title: 'Data not saved',
           message: "Something went wrong while saving your information. You cant re-save later in your profile");
+    }
+  }
+///Fetch the data from Firebase
+  Future<void> fetchUserData() async {
+    try {
+      final user = await userRepository.fetchUserDetails();
+      this.user(user);
+    } catch (e) {
+      user(UserModel.empty());
     }
   }
 }

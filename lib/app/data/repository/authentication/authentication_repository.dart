@@ -20,7 +20,10 @@ class AuthenticationRepository extends GetxController {
   final storage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
-  final userController = Get.put(UserController());
+  ///Get Authenticate user data
+  User? get authUser => _auth.currentUser;
+
+  // final userController = Get.put(UserController());
 
   @override
   void onReady() {
@@ -100,7 +103,7 @@ class AuthenticationRepository extends GetxController {
   ///Send mail for Reset password
   Future<void> sendEmailToResetPassword(email) async {
     try {
-       await _auth.sendPasswordResetEmail(email: email);
+      await _auth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -122,8 +125,7 @@ class AuthenticationRepository extends GetxController {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      final GoogleSignInAuthentication? googleAuth =
-      await googleUser?.authentication;
+      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
