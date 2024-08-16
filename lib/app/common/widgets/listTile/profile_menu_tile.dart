@@ -8,13 +8,13 @@ class AppProfileMenuTile extends StatelessWidget {
     super.key,
     required this.leadingText,
     required this.title,
-    this.trailing,
+    this.icon,
     this.onTap,
   });
 
   final String leadingText;
   final String title;
-  final Widget? trailing;
+  final IconData? icon;
   final VoidCallback? onTap;
 
   @override
@@ -25,7 +25,7 @@ class AppProfileMenuTile extends StatelessWidget {
           width:AppHelperFunction.screenWidth()/3.5,
           child: Text(leadingText,style: Theme.of(context).textTheme.bodySmall,overflow: TextOverflow.ellipsis)),
       title: Text(title, style: Theme.of(context).textTheme.bodyMedium,overflow: TextOverflow.ellipsis),
-      trailing: IconButton(onPressed: onTap, icon: const Icon(Iconsax.arrow_right_3)),
+      trailing: IconButton(onPressed: onTap, icon: Icon(icon?? Iconsax.arrow_right_3)),
     ); // ListTile
   }
 }
