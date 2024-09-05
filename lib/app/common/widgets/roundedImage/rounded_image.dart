@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce/app/common/widgets/loaders/shimmer_loader.dart';
 import 'package:ecommerce/app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
+
 class AppRoundedImage extends StatelessWidget {
   const AppRoundedImage({
     super.key,
@@ -32,19 +35,26 @@ class AppRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark=AppHelperFunction.isDarkMode(context);
+    final dark = AppHelperFunction.isDarkMode(context);
     return GestureDetector(
         onTap: onPressed,
         child: Container(
             width: width,
             height: height,
             padding: padding,
-            decoration: BoxDecoration(border: border, color: backgroundColor??(dark ? AppColors.dark.withOpacity(0.4) : AppColors.light), borderRadius: BorderRadius.circular(borderRadius)),
+            decoration: BoxDecoration(
+                border: border,
+                color: backgroundColor ?? (dark ? AppColors.dark.withOpacity(0.4) : AppColors.light),
+                borderRadius: BorderRadius.circular(borderRadius)),
             child: ClipRRect(
-              borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,
-              child: Image(
-                  fit: fit, image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider), // ClipRRect
-            ) // Container
-        ));
+                borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,
+                child: isNetworkImage
+                    ? CachedNetworkImage(
+                        imageUrl: imageUrl,
+                  fit: fit,
+                  progressIndicatorBuilder: (context, url, progress) => ShimmerLoading(),
+                      )
+                    : Image(fit: fit, image: AssetImage(imageUrl))) // Container
+            ));
   }
 }

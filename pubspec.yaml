@@ -36,6 +36,7 @@ dependencies:
   readmore: ^3.0.0
   flutter_rating_bar: ^4.0.1
   image_picker: ^1.1.2
+  shimmer: ^3.0.0
   #.--------------Local Storage---------------#
   get_storage: ^2.1.1
   #.--------------Splash Screen--------------#

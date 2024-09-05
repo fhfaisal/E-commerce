@@ -11,6 +11,7 @@ class UserController extends GetxController {
   Rx<UserModel> user = UserModel.empty().obs;
 
   final RxBool imageUploading = false.obs;
+  final imgLoading=false.obs;
 
   @override
   void onInit() {
@@ -51,11 +52,13 @@ class UserController extends GetxController {
   ///Fetch the data from Firebase
   Future<void> fetchUserData() async {
     try {
+      imgLoading.value=true;
       final user = await userRepository.fetchUserDetails();
       this.user(user);
     } catch (e) {
       user(UserModel.empty());
     }
+    imgLoading.value=false;
   }
 
   /// Upload Profile Image

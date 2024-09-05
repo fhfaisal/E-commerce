@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce/app/common/widgets/listTile/profile_menu_tile.dart';
+import 'package:ecommerce/app/common/widgets/loaders/shimmer_loader.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce/app/modules/login/controllers/user_controller.dart';
@@ -29,16 +31,15 @@ class ProfileView extends GetView<ProfileController> {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    Obx(() => AppRoundedImage(
-                        applyImageRadius: true,
-                        isNetworkImage: controller.user.value.profilePicture.isNotEmpty ? true : false,
-                        borderRadius: 100,
-                        fit: BoxFit.cover,
-                        imageUrl: controller.user.value.profilePicture.isNotEmpty
-                            ? controller.user.value.profilePicture
-                            : AppImageStrings.google,
-                        height: 80,
-                        width: 80),),
+                    Obx(() {
+                      final networkImage=controller.user.value.profilePicture;
+                      final image=networkImage.isNotEmpty?networkImage:AppImageStrings.user;
+                      return controller.imgLoading.value?
+                          const ShimmerLoading(width: 80,height: 80,)
+                      :AppRoundedImage(
+                        isNetworkImage: networkImage.isNotEmpty?true:false,
+                        imageUrl: image,width: 80,height: 80,fit: BoxFit.cover,);
+                    }),
                     TextButton(onPressed: () =>controller.uploadUserProfilePicture(), child: const Text('Change Profile'))
                   ],
                 ),

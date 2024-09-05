@@ -9,6 +9,7 @@ class AppImageStrings {
   static const logoDark = "assets/logos/icon_dark.png";
   static const google = "assets/logos/google_logo.png";
   static const facebook = "assets/logos/facebook_logo.png";
+  static const user = "assets/images/user.png";
 
   ///Home
   static const banner1 = "assets/images/banner/product1.png";
