@@ -8,7 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../modules/login/controllers/user_controller.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
-import '../loaders/shimmer_loader.dart';
+import '../loaders/shimmer/shimmer_loader.dart';
 import '../roundedImage/rounded_image.dart';
 class AppUserProfileTile extends StatelessWidget {
   const AppUserProfileTile({

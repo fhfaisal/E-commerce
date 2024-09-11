@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce/app/common/widgets/listTile/profile_menu_tile.dart';
-import 'package:ecommerce/app/common/widgets/loaders/shimmer_loader.dart';
+import 'package:ecommerce/app/common/widgets/loaders/shimmer/shimmer_loader.dart';
 import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
 import 'package:ecommerce/app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce/app/modules/login/controllers/user_controller.dart';

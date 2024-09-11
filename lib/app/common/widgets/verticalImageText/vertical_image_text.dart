@@ -1,3 +1,4 @@
+import 'package:ecommerce/app/common/widgets/roundedImage/rounded_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -10,11 +11,14 @@ class AppVerticalImageText extends StatelessWidget {
     this.backgroundColor,
     this.textColor,
     required this.text,
-    required this.image, this.onTap,
+    required this.image,
+    this.onTap,
+    this.isNetworkImage = true,
   });
 
   final Color? backgroundColor, textColor;
   final String text, image;
+  final bool isNetworkImage;
   final VoidCallback? onTap;
 
   @override
@@ -26,19 +30,12 @@ class AppVerticalImageText extends StatelessWidget {
         padding: const EdgeInsets.only(right: AppSizes.spaceBtwItems),
         child: Column(
           children: [
-            Container(
-              height: 56,
-              width: 56,
-              padding: const EdgeInsets.all(AppSizes.sm),
-              decoration:
-                  BoxDecoration(color: backgroundColor ?? (dark ? AppColors.black : AppColors.white), shape: BoxShape.circle),
-              child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                  color: dark ? AppColors.light : AppColors.dark,
-                ),
-              ),
+            AppRoundedImage(
+              imageUrl: image,
+              isNetworkImage: isNetworkImage,
+              fit: BoxFit.fitWidth,
+              backgroundColor: backgroundColor,
+              padding: const EdgeInsets.all(AppSizes.sm * 1.4),
             ),
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
             SizedBox(
