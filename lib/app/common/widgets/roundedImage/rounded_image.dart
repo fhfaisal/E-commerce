@@ -52,6 +52,7 @@ class AppRoundedImage extends StatelessWidget {
                     ? CachedNetworkImage(
                         imageUrl: imageUrl,
                   fit: fit,
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                   progressIndicatorBuilder: (context, url, progress) => ShimmerLoading(),
                       )
                     : Image(fit: fit, image: AssetImage(imageUrl))) // Container

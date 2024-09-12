@@ -1,6 +1,7 @@
 import 'package:ecommerce/app/common/widgets/loaders/shimmer/categories_shimmer.dart';
 import 'package:ecommerce/app/modules/home/controllers/category_controller.dart';
 import 'package:ecommerce/app/routes/app_pages.dart';
+import 'package:ecommerce/app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class HomeCategories extends StatelessWidget {
     final categoryController = Get.put(CategoryController());
     return Obx(() {
       if (categoryController.loading.value) return const CategoriesShimmer();
-      if (categoryController.featuredCategories.isEmpty) return const Text('No Data Found');
+      if (categoryController.featuredCategories.isEmpty) return Text('No Data Found',style: Theme.of(context).textTheme.titleMedium!.apply(color: AppColors.white),);
       return SizedBox(
         height: 80,
         child: ListView.builder(
