@@ -1,3 +1,4 @@
+import 'package:ecommerce/app/modules/home/model/category_model.dart';
 import 'package:ecommerce/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,9 +11,9 @@ import '../../../utils/constants/sizes.dart';
 import '../../home/widgets/product_card_vertical.dart';
 class AppCategoriesTab extends StatelessWidget {
   const AppCategoriesTab({
-    super.key,
+    super.key, required this.category,
   });
-
+final CategoryModel category;
   @override
   Widget build(BuildContext context) {
     return ListView(

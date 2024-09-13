@@ -4,6 +4,7 @@ import 'package:ecommerce/app/utils/snakbar/snackbar.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {
+  static CategoryController get instance => Get.find();
   final loading = false.obs;
   final _categoryRepository = Get.put(CategoryRepository());
   RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
@@ -32,8 +33,8 @@ class CategoryController extends GetxController {
           .assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
     } catch (e) {
       SnackBarMessage.error(title: '0h Snap!', message: e.toString());
-    }finally{
-      loading.value=false;
+    } finally {
+      loading.value = false;
     }
   }
 }
