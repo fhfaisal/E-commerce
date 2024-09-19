@@ -15,6 +15,7 @@ class LoginController extends GetxController {
   static LoginController get instance => Get.find();
 
   final userRepository = Get.put(UserRepository());
+  final userController = Get.put(UserController());
   final net = Get.put(NetworkManagerController());
 
   ///Variables
@@ -84,16 +85,16 @@ class LoginController extends GetxController {
       );
 
       ///Logged in by firebase
-      final userCredential =
-          await AuthenticationRepository.instance.loginWithEmailAndPassword(email.value.text.trim(), password.value.text.trim());
-
+      final userCredential = await AuthenticationRepository.instance
+          .loginWithEmailAndPassword(email: email.value.text.trim(), password: password.value.text.trim());
+      userController.saveUserRecord(userCredential);
       ///check remember me
       if (remember.value == true) {
         deviceStorage.write('REMEMBER_ME_EMAIL', email.value.text.trim());
         deviceStorage.write('REMEMBER_ME_PASSWORD', password.value.text.trim());
       }
       // Navigate to the home page
-      navigateToHomePage();
+      AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
       // Show error message
       FullScreenLoader.stopLoading();
@@ -108,9 +109,10 @@ class LoginController extends GetxController {
       final isConnected = await net.isConnected();
       if (!isConnected) return;
       //Google authentication
+      await AuthenticationRepository.instance.logOut();
       final userCredential = await AuthenticationRepository.instance.signInWithGoogle();
       //Save user record
-      //userController.saveUserRecord(userCredential);
+      userController.saveUserRecord(userCredential);
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
       print(e.toString());
